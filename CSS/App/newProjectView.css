@@ -1,0 +1,142 @@
+#newProjectsContainer {
+    display: none; /* Default: none | Optional: flex */
+    flex-direction: column;
+    background-color: white;
+}
+    #newProjectsContainerTitle {
+        width: 100%;
+        text-align: center;
+        color: black;
+        font-size: x-large;
+        font-weight: 500;
+        font-family: "M PLUS 2", sans-serif;
+        margin: 4vh auto 2vh auto;
+    }
+    .newProjectTitle {
+        display: flex;
+        margin: 2vh auto 2vh auto;
+        width: 75%;
+    }
+        .newProjectTitle p {
+            margin: auto 2.5% auto auto;
+            font-size: large;
+            color: black;
+            font-weight: 500;
+            font-family: "M PLUS 2", sans-serif;
+        }
+        .newProjectTitle input {
+            margin: auto auto auto 2.5%;
+            width: 50%;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-family: 'Montserrat', sans-serif;
+            padding: 1vh;
+            color: white;
+            background-color: #3D5A73;
+        }
+        .newProjectTitle input::placeholder {
+            color: white;
+        }
+    .newProjectColors {
+        display: flex;
+        margin: 2vh auto 2vh auto;
+        width: 75%;
+        height: 25vh;
+    }
+        .newProjectColorsSubDiv {
+            display: flex;
+            flex-direction: column;
+            width: 44%;
+            height: 100%;
+        }
+        #newProjectBackgroundOptions {
+            margin: auto 2% auto 4%;
+        }
+        #newProjectTextColorSelect {
+            margin: auto 4% auto 2%;
+        }
+            .newProjectColorsSubDiv p {
+            font-size: large;
+            font-weight: 500;
+            font-family: "M PLUS 2", sans-serif;
+            color: black;
+            margin: 2vh auto 1vh auto;
+            }
+                .newProjectColorsSubSubDiv {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    width: 90%;
+                    background-color: #3D5A73;
+                    border-radius: 5px;
+                    height: 18vh;
+                }
+                    .newProjectColorsSelector {
+                        display: flex;
+                        margin: auto;
+                        width: 80%;
+                        height: 5vh;
+                    }
+                    #colorPicker {
+                        margin: auto;
+                        height: 80%;
+                        width: 15%;
+                        border: 1px solid black;
+                        border-radius: 5px;
+                        padding: none;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                    #colorPicker::-webkit-color-swatch-wrapper {
+                        padding: 0;
+                    }
+                    #colorPicker::-webkit-color-swatch {
+                        border: none;
+                    }
+                    #colorHex {
+                        margin: auto;
+                        height: 75%;
+                        width: 70%;
+                        border: 1px solid black;
+                        border-radius: 5px;
+                        text-align: center;
+                        font-family: 'Montserrat', sans-serif;
+                        background-color: white;
+                        color: black;
+                    }
+    .newProjectPreview {
+        display: flex;
+        flex-direction: column;
+        margin: 2vh auto 4vh auto;
+        width: 66%;
+        height: 15vh;
+        background: linear-gradient(to bottom, #A4DFEF, #00C6FB); /* Gradiente de arriba a abajo */
+        border-radius: 10px;
+    }
+        .newProjectPreview p {
+            font-size: large;
+            font-weight: 500;
+            font-family: "M PLUS 2", sans-serif;
+            margin: auto;
+            color: black;
+        }
+    .createNewProjectButton {
+        display: flex;
+        margin: auto auto 4vh auto;
+        width: 20%;
+        height: 5vh;
+        background-color: #67D980;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+        .createNewProjectButton img { 
+            height: 2vh;
+            margin: auto 2.5% auto auto;
+        }
+        .createNewProjectButton p {
+            color: white;
+            font-family: "Barlow", sans-serif;
+            font-size: medium;
+            margin: auto auto auto 2.5%;
+        }

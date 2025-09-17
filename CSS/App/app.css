@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: #002233;
+    flex-direction: column;
+}
+    .navBar {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        color: white;
+    }
+        #logoNavBar {
+            height: 8vh;
+            margin: auto auto auto 2.5%;
+        }
+        .menuNavBar {
+            display: flex;
+            font-family: "Barlow", sans-serif;
+            font-size: larger;
+            width: 50%;
+        }
+            .menuNavBar p {
+                margin: auto;
+                cursor: pointer;
+            }
+            #projectsNavBar {
+                font-weight: bold;
+            }
+        .userMenuNavBar {
+            width: 20%;
+            height: 5vh;
+            display: flex;
+            border-radius: 7.5px;
+            margin: auto 2.5% auto auto;
+            font-family: "Rubik", sans-serif;
+            background-color: #3D5A73;
+        }
+            .userMenuNavBar img {
+                height: 3vh;
+                margin: auto;
+            }
+            .userMenuNavBar p {
+                margin: auto;
+                font-size: large;
+            }
+    .main {
+        width: 100%;
+        height: 83vh;
+        display: flex;
+    }
+        .mainProjects, .mainNotes {
+            display: flex;
+            flex-direction: column;
+            height: 83vh;
+            margin: auto;
+            border-radius: 15px;
+            background-color: #3D5A73;
+        }
+        .mainProjects {
+            width: 70%;
+        }
+        .mainNotes {
+            width: 20%;
+        }
+            .containers {
+                width: 95%;
+                height: 77vh; /*72vh*/
+                margin: auto auto 3vh auto;
+                overflow-y: scroll;
+                border-radius: 10px;
+            }
+            .containers::-webkit-scrollbar { width: 0.75vh; } 
+            .containers::-webkit-scrollbar-thumb { background: whitesmoke;  border-radius: 10px; }
+            .containers::-webkit-scrollbar-thumb:hover { background: white; cursor: pointer; }
+    .footer {
+        width: 100%;
+        height: 8vh;
+    }
+        .footer div {
+            display: flex;
+            width: 17.5%;
+            height: 8vh;
+            margin: auto;
+        }
+        .footer img {
+            height: 3vh;
+            margin: auto;
+        }
+        .footer p {
+            color: white;
+            font-family: "M PLUS 2", sans-serif;
+            font-size: medium;
+            margin: auto;
+        }
+        .footer span {
+            font-weight: bold;
+        }

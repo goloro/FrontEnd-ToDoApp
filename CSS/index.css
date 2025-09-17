@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: repeating-linear-gradient(-75deg, #2158E6 0, #2158E6 50%, #002233 0, #002233 100%);
+}
+
+.main {
+    display: flex;
+    width: 50%;
+    height: 100vh;
+}
+
+#logoTDA {
+    width: 70%;
+    height: 40%;
+    margin: auto;
+}
+
+.login-sign {
+    display: flex;
+    width: 50%;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: white;
+    width: 50%;
+    height: 50vh;
+    margin: auto;
+}
+
+.form-users {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-subDiv {
+    display: flex;
+    background-color: #2158E5;
+    width: 80%;
+    height: 7vh;
+    margin: 12% auto 0% auto;
+    border-radius: 3px;
+}
+
+.form-subDiv img {
+    height: 4.5vh;
+    margin: auto;
+}
+
+.form-subDiv input {
+    width: 80%;
+    margin: 1vh auto 1vh auto;
+    padding: 2%;
+    height: 5vh;
+    border: none;
+    border-radius: 8px;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+.button-form {
+    width: 40%;
+    height: 5vh;
+    margin: 10% auto 0 auto;
+    padding: auto;
+    text-align: center;
+    background-color: #002233;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: large;
+    cursor: pointer;
+}
+
+.form-users p {
+    font-family: "Baloo Bhai 2", sans-serif;
+    font-size: small;
+    margin: 5% auto auto auto;
+}
+
+.form-users span {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#form-sign {
+    display: none;
+}
