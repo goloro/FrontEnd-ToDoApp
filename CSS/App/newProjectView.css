@@ -78,7 +78,7 @@
                         width: 80%;
                         height: 5vh;
                     }
-                    #colorPicker {
+                    .colorPicker {
                         margin: auto;
                         height: 80%;
                         width: 15%;
@@ -88,13 +88,13 @@
                         outline: none;
                         cursor: pointer;
                     }
-                    #colorPicker::-webkit-color-swatch-wrapper {
+                    .colorPicker::-webkit-color-swatch-wrapper {
                         padding: 0;
                     }
-                    #colorPicker::-webkit-color-swatch {
+                    .colorPicker::-webkit-color-swatch {
                         border: none;
                     }
-                    #colorHex {
+                    .colorHex {
                         margin: auto;
                         height: 75%;
                         width: 70%;
@@ -121,7 +121,7 @@
             margin: auto;
             color: black;
         }
-    .createNewProjectButton {
+    #createNewProjectButton {
         display: flex;
         margin: auto auto 4vh auto;
         width: 20%;
@@ -130,11 +130,11 @@
         border-radius: 10px;
         cursor: pointer;
     }
-        .createNewProjectButton img { 
+        #createNewProjectButton img { 
             height: 2vh;
             margin: auto 2.5% auto auto;
         }
-        .createNewProjectButton p {
+        #createNewProjectButton p {
             color: white;
             font-family: "Barlow", sans-serif;
             font-size: medium;

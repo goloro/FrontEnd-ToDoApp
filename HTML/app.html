@@ -8,6 +8,7 @@
 
         <link rel="shortcut icon" href="../Images/ToDoApp.png">
 
+        <link rel="stylesheet" href="../CSS/General/alert.css">
         <link rel="stylesheet" href="../CSS/App/app.css">
         <link rel="stylesheet" href="../CSS/App/projectsView.css">
         <link rel="stylesheet" href="../CSS/App/workAreaView.css">
@@ -17,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="navBar">
@@ -106,19 +107,19 @@
                     <p id="newProjectsContainerTitle">Create New Project</p>
                     <div class="newProjectTitle">
                         <p>Title</p>
-                        <input type="text" maxlength="20" placeholder="Project Title">
+                        <input id="newProjectTitleInput" type="text" maxlength="20" placeholder="Project Title">
                     </div>
                     <div class="newProjectColors">
                         <div class="newProjectColorsSubDiv" id="newProjectBackgroundOptions">
                             <p>Background</p>
                             <div class="newProjectColorsSubSubDiv" id="newProjectBackgroundOptionsSubDiv">
                                 <div class="newProjectColorsSelector">
-                                    <input type="color" id="colorPicker" name="colorPicker" value="#A4DFEF">
-                                    <input type="text" id="colorHex" name="colorHex" maxlength="7" placeholder="#A4DFEF">
+                                    <input id="newProjectColorSelectorBackgroundInputPicker1" type="color" class="colorPicker" name="colorPicker" value="#a4dfef">
+                                    <input id="newProjectColorSelectorBackgroundInputText1" type="text" class="colorHex" name="colorHex" maxlength="7" placeholder="#a4dfef">
                                 </div>
                                 <div class="newProjectColorsSelector">
-                                    <input type="color" id="colorPicker" name="colorPicker" value="#00C6FB">
-                                    <input type="text" id="colorHex" name="colorHex" maxlength="7" placeholder="#00C6FB">
+                                    <input id="newProjectColorSelectorBackgroundInputPicker2" type="color" class="colorPicker" name="colorPicker" value="#00c6fb">
+                                    <input id="newProjectColorSelectorBackgroundInputText2" type="text" class="colorHex" name="colorHex" maxlength="7" placeholder="#00c6fb">
                                 </div>
                             </div>
                         </div>
@@ -126,16 +127,16 @@
                             <p>Text</p>
                             <div class="newProjectColorsSubSubDiv" id="newProjectTextColorSelectSubDiv">
                                 <div class="newProjectColorsSelector">
-                                    <input type="color" id="colorPicker" name="colorPicker" value="FFFFFF">
-                                    <input type="text" id="colorHex" name="colorHex" maxlength="7" placeholder="#FFFFFF">
+                                    <input id="newProjectColorSelectorTextInputPicker" type="color" class="colorPicker" name="colorPicker" value="#000000">
+                                    <input id="newProjectColorSelectorTextInputText"type="text" class="colorHex" name="colorHex" maxlength="7" placeholder="#000000">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="newProjectPreview">
-                        <p>Text Color</p>
+                    <div class="newProjectPreview" id="newProjectPreview">
+                        <p id="newProjectPreviewText">Text Color</p>
                     </div>
-                    <div class="createNewProjectButton">
+                    <div id="createNewProjectButton">
                         <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white">
                         <p>Create Project</p>
                     </div>
@@ -166,6 +167,13 @@
             <div>
                 <img src="..//Images/logo_glr_white.png">
                 <p>Developed by <span>goloro</span></p>
+            </div>
+        </div>
+
+        <div id="alertBox">
+            <div id="alertBoxSubDiv">
+                <img id="alertBoxIcon" src="https://api.iconify.design/fluent/alert-12-regular.svg?color=white">
+                <p id="alertBoxText">Alert</p>
             </div>
         </div>
 
