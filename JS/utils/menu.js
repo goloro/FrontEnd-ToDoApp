@@ -63,3 +63,6 @@ function showNewProject () {
 
     newProjectBtn.style.fontWeight = "bold"
 }
+
+// EXPORTS
+export { hideAll, showProjects, showWorkArea, showNewProject }; 

@@ -1,39 +1,7 @@
-/*// CONSTANTS
-const backgroundInputColor = document.getElementById("selectedColorBackground")
-const textInputColor = document.getElementById("selectedColorText")
-const addColorBTN = document.getElementById("backgroundColorAdd")
-
-const backgroundColorCode = document.getElementById("backgroundColorCode")
-const textColorCode = document.getElementById("textColorCode")
-const backgroundColorPreview = document.getElementById("backgroundColorPreview")
-const textColorPreview = document.getElementById("form-np-previewDiv-text")
-
-// VARIABLES
-var backCode = backgroundInputColor.value
-var textCode = textInputColor.value
-
-// EVENT LISTENERS
-backgroundInputColor.addEventListener("input", e => {
-    if (checkDifferentColors()) backCode = backgroundInputColor.value
-    backgroundColorCode.innerHTML = backCode
-    backgroundColorPreview.style.backgroundColor = backCode
-})
-textInputColor.addEventListener("input", e => {
-    if (checkDifferentColors()) textCode = textInputColor.value
-    textColorCode.innerHTML = textCode
-    textColorPreview.style.color = textCode
-})
-addColorBTN.addEventListener("click", e => {
-        
-})
-
-// FUNCTIONS
-function checkDifferentColors() {
-    if (backgroundInputColor.value != textInputColor.value) return true
-}*/
-
 // IMPORTS
 import { AlertsClass } from '../utils/alerts.js'
+import { loadProjectsWorkArea } from '../utils/loadProjects.js'
+import { hideAll, showProjects, showWorkArea, showNewProject } from '../utils/menu.js';
 
 // CONSTANTS
 // Buttons
@@ -59,10 +27,10 @@ const previewText = document.getElementById("newProjectPreviewText")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
 
 // VARIABLES
-var background1 = "#A4DFEF"
-var background2 = "#00C6FB"
-var textColor = "#000000"
-var numProjects = 0
+let background1 = "#A4DFEF"
+let background2 = "#00C6FB"
+let textColor = "#000000" 
+let numProjects = 0
 
 // EVENT LISTENERS
 createProjectBtn.addEventListener("click", e => {
@@ -77,10 +45,13 @@ createProjectBtn.addEventListener("click", e => {
                                        </div>`;
         document.getElementById(`project-${numProjects}`).style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
         document.getElementById(`projectTitle-${numProjects}`).style.color = textColor
-        noProjectsText.style.display = "none"
-        projectsSubContainer.style.display = "grid"
         numProjects++
         new AlertsClass("success", "Project created successfully")
+        noProjectsText.style.display = "none"
+        projectsSubContainer.style.display = "grid"
+        loadProjectsWorkArea(titleInput.value, background1, background2, textColor)
+        hideAll()
+        showWorkArea()
     }
 })
 colorBackgroundInputPicker1.addEventListener("input", e => {
