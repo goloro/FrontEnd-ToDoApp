@@ -39,6 +39,9 @@ import { AlertsClass } from '../utils/alerts.js'
 // Buttons
 const createProjectBtn = document.getElementById("createNewProjectButton")
 
+// Text
+const noProjectsText = document.getElementById("noProjects")
+
 // Inputs
 const titleInput = document.getElementById("newProjectTitleInput")
 const colorBackgroundInputPicker1 = document.getElementById("newProjectColorSelectorBackgroundInputPicker1")
@@ -52,24 +55,59 @@ const colorTextInputText = document.getElementById("newProjectColorSelectorTextI
 const previewDiv = document.getElementById("newProjectPreview")
 const previewText = document.getElementById("newProjectPreviewText")
 
+// Containers
+const projectsSubContainer = document.getElementById("projectsSubContainer")
+
+// VARIABLES
+var background1 = "#A4DFEF"
+var background2 = "#00C6FB"
+var textColor = "#000000"
+var numProjects = 0
+
 // EVENT LISTENERS
 createProjectBtn.addEventListener("click", e => {
     // TODO: check if any field is empty
     // TODO: check if title is correct
     // TODO: check if the color is a color hex code
-    if (!checkFieldsEmpty()) {}
+    // TODO: check if all colors aren´t the same
+    // TODO: store in db
+    if (!checkFieldsEmpty()) {
+        projectsSubContainer.innerHTML += `<div class="project" id="project-${numProjects}">
+                                            <p class="projectTitle" id="projectTitle-${numProjects}">${titleInput.value}</p>
+                                       </div>`;
+        document.getElementById(`project-${numProjects}`).style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+        document.getElementById(`projectTitle-${numProjects}`).style.color = textColor
+        noProjectsText.style.display = "none"
+        projectsSubContainer.style.display = "grid"
+        numProjects++
+        new AlertsClass("success", "Project created successfully")
+    }
 })
 colorBackgroundInputPicker1.addEventListener("input", e => {
-    // TODO: change the background of the preview and the value of the text 1
+    background1 = colorBackgroundInputPicker1.value
+    previewDiv.style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+    colorBackgroundInputText1.value = background1
 })
 colorBackgroundInputText1.addEventListener("keydown", e => {
-    // TODO: change the background of the preview and the value of the color picker 1
+    // TODO: check if its a real color hex code
+    if (e.key === "Enter") {
+        if (colorBackgroundInputText1.value != "") background1 = colorBackgroundInputText1.value
+    }
+    previewDiv.style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+    colorBackgroundInputPicker1.value = background1
 })
 colorBackgroundInputPicker2.addEventListener("input", e => {
-    // TODO: change the background of the preview and the value of the text 2
+    background2 = colorBackgroundInputPicker2.value
+    previewDiv.style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+    colorBackgroundInputText2.value = background2
 })
 colorBackgroundInputText2.addEventListener("keydown", e => {
     // TODO: change the background of the preview and the value of the color picker 2
+    if (e.key === "Enter") {
+        if (colorBackgroundInputText2.value != "") background2 = colorBackgroundInputText2.value
+    }
+    previewDiv.style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+    colorBackgroundInputPicker2.value = background2
 })
 colorTextInputPicker.addEventListener("input", e => {                                    
     previewText.style.color = colorTextInputPicker.value

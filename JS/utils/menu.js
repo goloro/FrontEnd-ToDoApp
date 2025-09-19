@@ -6,6 +6,9 @@ const newProjectBtn = document.getElementById("newProjectNavBar")
 const logoutBtn = document.getElementById("logoutNavBar")
 const noProjectsCreateProjectBtn = document.getElementById("noProjectsCreateProjectSpan")
 
+// Text
+const noProjectsText = document.getElementById("noProjects")
+
 // Containers
 const projectsContainer = document.getElementById("projectsContainer")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
@@ -42,11 +45,12 @@ function hideAll () {
 }
 function showProjects () {
     if (projectsSubContainer.children.length === 0) { //Check for projects
-        projectsContainer.style.display = "flex"
+        noProjectsText.style.display = "flex"
     } else {
-        projectsContainer.style.display = "grid"
+        noProjectsText.style.display = "none"
     }
 
+    projectsContainer.style.display = "flex"
     projectsBtn.style.fontWeight = "bold"
 }
 function showWorkArea () {
