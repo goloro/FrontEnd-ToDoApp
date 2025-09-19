@@ -2,26 +2,32 @@
 
 // CONSTANTS
 // Text
-const noProjectsText = document.getElementById("noProjects")
+const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
+const noProjectsTextProjects = document.getElementById("noProjectsTextProjects")
 const projectWorkAreaTitleText = document.getElementById("workAreaTopProjectTitle")
 
 // Container
 const workAreaTop = document.getElementById("workAreaTop")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
+const workAreaSubContainer = document.getElementById("workAreaSubContainer")
 
 // VARIABLES
 let numProjects = 0
 
 // FUNCTIONS
-function loadProjectsWorkArea(title, background1, background2, textColor) {
+function loadProjectsWorkArea(title, background1, background2, textColor, firstProject) {
+    if (firstProject) {
+        noProjectsTextWA.style.display = "none"
+        workAreaSubContainer.style.display = "flex"
+    }
     projectWorkAreaTitleText.innerText = title
     workAreaTop.style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
     projectWorkAreaTitleText.style.color = textColor
 }
 
-function loadProjectsProjectsView(title, background1, background2, textColor) {
-    if (projectsSubContainer.children.length === 0) {
-        noProjectsText.style.display = "none"
+function loadProjectsProjectsView(title, background1, background2, textColor, firstProject) {
+    if (firstProject) {
+        noProjectsTextProjects.style.display = "none"
         projectsSubContainer.style.display = "grid"
     }
     projectsSubContainer.innerHTML += `<div class="project" id="project-${numProjects}">

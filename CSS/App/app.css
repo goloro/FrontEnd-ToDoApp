@@ -102,3 +102,13 @@ body {
         .footer span {
             font-weight: bold;
         }
+
+#noProjectsTextProjects, #noProjectsTextWorkArea {
+    display: flex; /* Default: flex | Optional: none*/
+    text-align: center;
+    padding: auto;
+    color: white;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+}

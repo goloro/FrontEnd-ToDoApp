@@ -21,7 +21,7 @@ const previewDiv = document.getElementById("newProjectPreview")
 const previewText = document.getElementById("newProjectPreviewText")
 
 // Containers
-
+const projectsSubContainer = document.getElementById("projectsSubContainer")
 
 // VARIABLES
 let background1 = "#A4DFEF"
@@ -36,8 +36,10 @@ createProjectBtn.addEventListener("click", e => {
     // TODO: check if all colors aren´t the same
     // TODO: store in db
     if (!checkFieldsEmpty()) {
-        loadProjectsProjectsView(titleInput.value, background1, background2, textColor)
-        loadProjectsWorkArea(titleInput.value, background1, background2, textColor)
+        let firstProject = false
+        if (projectsSubContainer.children.length === 0) firstProject = true
+        loadProjectsProjectsView(titleInput.value, background1, background2, textColor, firstProject)
+        loadProjectsWorkArea(titleInput.value, background1, background2, textColor, firstProject)
         hideAll()
         showWorkArea()
         new AlertsClass("success", "Project created successfully")

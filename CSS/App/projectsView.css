@@ -1,15 +1,6 @@
 #projectsContainer {
     display: flex; /* Default: flex | Optional: none*/
 }
-    #noProjects {
-        display: flex; /* Default: flex | Optional: none*/
-        text-align: center;
-        padding: auto;
-        color: white;
-        font-size: large;
-        font-family: 'Montserrat', sans-serif;
-        margin: auto;
-    }
     #noProjects span {
         font-weight: bold;
         margin-left: 5px;

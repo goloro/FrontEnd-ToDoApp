@@ -7,7 +7,8 @@ const logoutBtn = document.getElementById("logoutNavBar")
 const noProjectsCreateProjectBtn = document.getElementById("noProjectsCreateProjectSpan")
 
 // Text
-const noProjectsText = document.getElementById("noProjects")
+const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
+const noProjectsTextProjects = document.getElementById("noProjectsTextProjects")
 
 // Containers
 const projectsContainer = document.getElementById("projectsContainer")
@@ -45,17 +46,22 @@ function hideAll () {
 }
 function showProjects () {
     if (projectsSubContainer.children.length === 0) { //Check for projects
-        noProjectsText.style.display = "flex"
+        noProjectsTextProjects.style.display = "flex"
     } else {
-        noProjectsText.style.display = "none"
+        noProjectsTextProjects.style.display = "none"
     }
 
     projectsContainer.style.display = "flex"
     projectsBtn.style.fontWeight = "bold"
 }
 function showWorkArea () {
-    workAreaContainer.style.display = "flex"
+    if (projectsSubContainer.children.length === 0) { //Check for projects
+        noProjectsTextWA.style.display = "flex"
+    } else {
+        noProjectsTextWA.style.display = "none"
+    }
 
+    workAreaContainer.style.display = "flex"
     workAreaBtn.style.fontWeight = "bold"
 }
 function showNewProject () {
