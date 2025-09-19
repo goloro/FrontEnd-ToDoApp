@@ -1,14 +1,11 @@
 // IMPORTS
 import { AlertsClass } from '../utils/alerts.js'
-import { loadProjectsWorkArea } from '../utils/loadProjects.js'
+import { loadProjectsWorkArea, loadProjectsProjectsView } from '../utils/loadProjects.js'
 import { hideAll, showProjects, showWorkArea, showNewProject } from '../utils/menu.js';
 
 // CONSTANTS
 // Buttons
 const createProjectBtn = document.getElementById("createNewProjectButton")
-
-// Text
-const noProjectsText = document.getElementById("noProjects")
 
 // Inputs
 const titleInput = document.getElementById("newProjectTitleInput")
@@ -24,13 +21,12 @@ const previewDiv = document.getElementById("newProjectPreview")
 const previewText = document.getElementById("newProjectPreviewText")
 
 // Containers
-const projectsSubContainer = document.getElementById("projectsSubContainer")
+
 
 // VARIABLES
 let background1 = "#A4DFEF"
 let background2 = "#00C6FB"
 let textColor = "#000000" 
-let numProjects = 0
 
 // EVENT LISTENERS
 createProjectBtn.addEventListener("click", e => {
@@ -40,18 +36,11 @@ createProjectBtn.addEventListener("click", e => {
     // TODO: check if all colors aren´t the same
     // TODO: store in db
     if (!checkFieldsEmpty()) {
-        projectsSubContainer.innerHTML += `<div class="project" id="project-${numProjects}">
-                                            <p class="projectTitle" id="projectTitle-${numProjects}">${titleInput.value}</p>
-                                       </div>`;
-        document.getElementById(`project-${numProjects}`).style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
-        document.getElementById(`projectTitle-${numProjects}`).style.color = textColor
-        numProjects++
-        new AlertsClass("success", "Project created successfully")
-        noProjectsText.style.display = "none"
-        projectsSubContainer.style.display = "grid"
+        loadProjectsProjectsView(titleInput.value, background1, background2, textColor)
         loadProjectsWorkArea(titleInput.value, background1, background2, textColor)
         hideAll()
         showWorkArea()
+        new AlertsClass("success", "Project created successfully")
     }
 })
 colorBackgroundInputPicker1.addEventListener("input", e => {
