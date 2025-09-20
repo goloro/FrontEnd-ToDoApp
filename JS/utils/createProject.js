@@ -34,7 +34,7 @@ createProjectBtn.addEventListener("click", e => {
     // TODO: check if title is correct
     // TODO: check if the color is a color hex code
     // TODO: check if all colors aren´t the same
-    // TODO: store in db
+    // TODO: store in BBDD
     if (!checkFieldsEmpty()) {
         let firstProject = false
         if (projectsSubContainer.children.length === 0) firstProject = true
@@ -44,6 +44,10 @@ createProjectBtn.addEventListener("click", e => {
         showWorkArea()
         new AlertsClass("success", "Project created successfully")
     }
+})
+titleInput.addEventListener("input", e => {
+    if (titleInput.value === "") previewText.innerText = "Project Title"
+    else previewText.innerText = titleInput.value
 })
 colorBackgroundInputPicker1.addEventListener("input", e => {
     background1 = colorBackgroundInputPicker1.value
