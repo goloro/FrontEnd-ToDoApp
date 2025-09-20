@@ -1,11 +1,6 @@
 #projectsContainer {
     display: flex; /* Default: flex | Optional: none*/
 }
-    #noProjects span {
-        font-weight: bold;
-        margin-left: 5px;
-        cursor: pointer;
-    }
     #projectsSubContainer {
         display: none; /* Default: grid | Optional: none*/
         grid-template-columns: auto auto auto auto;

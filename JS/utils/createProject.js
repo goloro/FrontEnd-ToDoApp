@@ -1,7 +1,7 @@
 // IMPORTS
 import { AlertsClass } from '../utils/alerts.js'
 import { loadProjectsWorkArea, loadProjectsProjectsView } from '../utils/loadProjects.js'
-import { hideAll, showProjects, showWorkArea, showNewProject } from '../utils/menu.js';
+import { hideAll, showWorkArea } from '../utils/menu.js';
 
 // CONSTANTS
 // Buttons

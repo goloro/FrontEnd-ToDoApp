@@ -4,7 +4,8 @@ const projectsBtn = document.getElementById("projectsNavBar")
 const workAreaBtn = document.getElementById("workAreaNavBar")
 const newProjectBtn = document.getElementById("newProjectNavBar")
 const logoutBtn = document.getElementById("logoutNavBar")
-const noProjectsCreateProjectBtn = document.getElementById("noProjectsCreateProjectSpan")
+const noProjectsCreateProjectBtnPR = document.getElementById("noProjectsCreateProjectSpan-PR")
+const noProjectsCreateProjectBtnWA = document.getElementById("noProjectsCreateProjectSpan-WA")
 
 // Text
 const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
@@ -29,7 +30,11 @@ newProjectBtn.addEventListener("click", e => {
     hideAll()
     showNewProject()
 })
-noProjectsCreateProjectBtn.addEventListener("click", e => {
+noProjectsCreateProjectBtnPR.addEventListener("click", e => {
+    hideAll()
+    showNewProject()
+})
+noProjectsCreateProjectBtnWA.addEventListener("click", e => {
     hideAll()
     showNewProject()
 })

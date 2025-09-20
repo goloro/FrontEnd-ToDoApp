@@ -1,5 +1,3 @@
-// IMPORTS
-
 // CONSTANTS
 // Text
 const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
