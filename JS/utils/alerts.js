@@ -6,7 +6,7 @@ const alertBoxSubDiv = document.getElementById("alertBoxSubDiv")
 
 // ALERTS
 class AlertsClass {
-    constructor(icon, text) {
+    constructor(icon, text, timeout) {
         alertBox.style.display = "flex"
         if (icon === "success") {
             alertBoxIcon.src = "https://api.iconify.design/bx/check-circle.svg?color=white"
@@ -20,7 +20,9 @@ class AlertsClass {
         }
         alertBoxText.innerHTML = text
 
-        setTimeout(deleteAlert, 2000)
+        if (timeout === null || timeout === undefined) timeout = 2000
+
+        setTimeout(deleteAlert, timeout)
     }
 }
 

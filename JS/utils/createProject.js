@@ -42,7 +42,7 @@ createProjectBtn.addEventListener("click", e => {
         loadProjectsWorkArea(titleInput.value, background1, background2, textColor, firstProject)
         hideAll()
         showWorkArea()
-        new AlertsClass("success", "Project created successfully")
+        new AlertsClass("success", "Project created successfully", null)
     }
 })
 titleInput.addEventListener("input", e => {
@@ -95,7 +95,7 @@ colorTextInputText.addEventListener("keydown", e => {
 // FUNCTION
 function checkFieldsEmpty() {
     if (titleInput.value == "") {
-        new AlertsClass("error", "The title field is empty")
+        new AlertsClass("error", "The title field is empty", null)
         return true
     }
     return false
