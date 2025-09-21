@@ -9,11 +9,11 @@ alert()
 
 // EVENT LISTENERS
 loginBtn.addEventListener("click", e => {
-    window.open('../HTML/app.html', '_blank')
+    window.open('../HTML/app.html', '_self')
 })
 
 // FUNCTIONS
 function alert() {
-    new AlertsClass("success", "We are working on it! \n Press Sign In to enter the app", 4000)
+    new AlertsClass("success", "We are working on it! Press Sign In to enter the app", 4000)
 }
 
