@@ -85,6 +85,7 @@ colorBackgroundInputText2.addEventListener("keydown", e => {
 colorTextInputPicker.addEventListener("input", e => {                                    
     previewText.style.color = colorTextInputPicker.value
     colorTextInputText.value = colorTextInputPicker.value
+    textColor = colorTextInputPicker.value
 })
 colorTextInputText.addEventListener("keydown", e => {
     // TODO: check if its a real color hex code
@@ -92,6 +93,7 @@ colorTextInputText.addEventListener("keydown", e => {
         if (colorTextInputText.value != "") {
             previewText.style.color = colorTextInputText.value
             colorTextInputPicker.value = colorTextInputText.value
+            textColor = colorTextInputText.value
         } else {
             previewText.style.color = "#000000"
             colorTextInputPicker.value = "#000000"
