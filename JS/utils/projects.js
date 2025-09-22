@@ -1,11 +1,15 @@
 // IMPORTS
 import { AlertsClass } from '../utils/alerts.js'
-import { loadProjectsWorkArea, loadProjectsProjectsView } from '../utils/loadProjects.js'
 import { hideAll, showWorkArea } from '../utils/menu.js';
 
 // CONSTANTS
 // Buttons
 const createProjectBtn = document.getElementById("createNewProjectButton")
+
+// Text
+const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
+const noProjectsTextProjects = document.getElementById("noProjectsTextProjects")
+const projectWorkAreaTitleText = document.getElementById("workAreaTopProjectTitle")
 
 // Inputs
 const titleInput = document.getElementById("newProjectTitleInput")
@@ -21,12 +25,15 @@ const previewDiv = document.getElementById("newProjectPreview")
 const previewText = document.getElementById("newProjectPreviewText")
 
 // Containers
+const workAreaTop = document.getElementById("workAreaTop")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
+const workAreaSubContainer = document.getElementById("workAreaSubContainer")
 
 // VARIABLES
 let background1 = "#A4DFEF"
 let background2 = "#00C6FB"
 let textColor = "#000000" 
+let numProjects = 0
 
 // EVENT LISTENERS
 createProjectBtn.addEventListener("click", e => {
@@ -99,4 +106,27 @@ function checkFieldsEmpty() {
         return true
     }
     return false
+}
+
+function loadProjectsWorkArea(title, background1, background2, textColor, firstProject) {
+    if (firstProject) {
+        noProjectsTextWA.style.display = "none"
+        workAreaSubContainer.style.display = "flex"
+    }
+    projectWorkAreaTitleText.innerText = title
+    workAreaTop.style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+    projectWorkAreaTitleText.style.color = textColor
+}
+
+function loadProjectsProjectsView(title, background1, background2, textColor, firstProject) {
+    if (firstProject) {
+        noProjectsTextProjects.style.display = "none"
+        projectsSubContainer.style.display = "grid"
+    }
+    projectsSubContainer.innerHTML += `<div class="project" id="project-${numProjects}">
+                                        <p class="projectTitle" id="projectTitle-${numProjects}">${title}</p>
+                                   </div>`;
+    document.getElementById(`project-${numProjects}`).style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
+    document.getElementById(`projectTitle-${numProjects}`).style.color = textColor
+    numProjects++
 }
