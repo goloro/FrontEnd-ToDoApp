@@ -3,7 +3,6 @@
 const createNoteBtn = document.getElementById("createNoteButton")
 
 // Text
-const noteText = document.getElementById("noteText")
 const noNotesText = document.getElementById("noNotesText")
 
 // Containers
@@ -29,8 +28,13 @@ function loadNotes(firstNote) {
         notesSubContainer.style.display = "flex"
         noNotesText.style.display = "none"
     }
+
     notesSubContainer.innerHTML += `<div class="note" id="note-${numNotes}">
                             <textarea class="noteText" id="noteText-${numNotes}" placeholder="Esto es una nota" ></textarea>
                         </div>`
+    
     numNotes++
+}
+function saveNote(id, text) {
+    localStorage.setItem(`TDA_NOTE_${id}`, JSON.stringify(text))
 }

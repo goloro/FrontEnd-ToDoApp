@@ -9,7 +9,7 @@ alert()
 
 // EVENT LISTENERS
 loginBtn.addEventListener("click", e => {
-    window.open('../HTML/app.html', '_self')
+    window.open('../HTML/app.html', '_blank')
 })
 
 // FUNCTIONS
