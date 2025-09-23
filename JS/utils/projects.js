@@ -26,6 +26,8 @@ const previewText = document.getElementById("newProjectPreviewText")
 
 // Containers
 const workAreaTop = document.getElementById("workAreaTop")
+const addTask = document.getElementById("addTaskDiv")
+const toDoListContainer = document.getElementById("toDoListContainer")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
 const workAreaSubContainer = document.getElementById("workAreaSubContainer")
 
@@ -100,6 +102,9 @@ colorTextInputText.addEventListener("keydown", e => {
         }
     }
 })
+addTask.addEventListener("click", e => {
+    addTaskToProject()
+})
 
 // FUNCTION
 function checkFieldsEmpty() {
@@ -131,4 +136,12 @@ function loadProjectsProjectsView(title, background1, background2, textColor, fi
     document.getElementById(`project-${numProjects}`).style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
     document.getElementById(`projectTitle-${numProjects}`).style.color = textColor
     numProjects++
+}
+function addTaskToProject() {
+    // TODO: Add task to project (BBDD)
+    toDoListContainer.innerHTML += `<div class="toDoTask">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 21 21"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" d="M5.5 3.5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2"/></svg>
+                                        <input class="task" maxlength="40" placeholder="This is a task"></input>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#f25050" d="M7.378 5.531a2.75 2.75 0 0 1 1.92-.781h10.297c.598 0 1.294.166 1.863.519c.579.358 1.11.974 1.11 1.856v9.75c0 .882-.531 1.497-1.11 1.856a3.65 3.65 0 0 1-1.863.519H9.298a2.75 2.75 0 0 1-1.92-.781l-5.35-5.216a1.75 1.75 0 0 1 0-2.506zM14.03 9.47a.75.75 0 1 0-1.06 1.06L14.44 12l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L16.56 12l1.47-1.47a.75.75 0 1 0-1.06-1.06l-1.47 1.47z"/></svg>
+                                    </div>`
 }

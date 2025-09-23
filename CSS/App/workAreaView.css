@@ -97,6 +97,7 @@
                 display: flex; 
                 margin: auto 4vh auto auto;
                 border-radius: 5px;
+                cursor: pointer;
             }
                 .addTaskDiv img {
                     height: 2vh;
@@ -118,7 +119,7 @@
         }
         .toDoListContainer::-webkit-scrollbar { width: 0.75vh; } 
         .toDoListContainer::-webkit-scrollbar-thumb { background: #a3a2a2;  border-radius: 10px; }
-        .toDoListContainer::-webkit-scrollbar-thumb:hover { background: a3a2a2; cursor: pointer; }
+        .toDoListContainer::-webkit-scrollbar-thumb:hover { background: #a3a2a2; cursor: pointer; }
             .toDoTask {
                 margin: auto;
                 display: flex;
@@ -126,7 +127,7 @@
                 height: 4vh;
             }
             .toDoTask svg {
-                margin: 0.2vh auto auto auto;
+                margin: auto 0.2vh auto 0.2vh;
                 cursor: pointer;
             }
             .task {
@@ -136,8 +137,6 @@
                 font-size: small;
                 border: none;
                 outline: none;
-                padding: 0.2vh;
-                resize: none;
             }
     .workAreaDescription {
         height: 30vh;
