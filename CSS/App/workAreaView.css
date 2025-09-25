@@ -27,7 +27,7 @@
             font-family: "Baloo Bhai 2", serif;
             font-size: xx-large;
         }
-        .workAreaTopDeleteDiv {
+        #workAreaTopDeleteDiv {
             width: 15%;
             height: 4vh;
             display: flex;
@@ -36,10 +36,10 @@
             background-color: #EB584E;
             cursor: pointer;
         }
-        .workAreaTopDeleteDiv svg {
+        #workAreaTopDeleteDiv svg {
             margin: auto 2.5% auto auto;
         }
-        .workAreaTopDeleteDiv p {
+        #workAreaTopDeleteDiv p {
             margin: auto auto auto 2.5%;
             color: white;
             font-size: small;

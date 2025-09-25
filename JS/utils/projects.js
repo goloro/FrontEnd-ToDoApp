@@ -169,6 +169,7 @@ function addTaskToProject() {
             updatePercentage()
         })
         document.getElementById(`deleteSVGTask-${i}`).addEventListener("click", e => {
+            if (document.getElementById(`checkPNGTask-${i}`).src.includes('checkbox-checked.png')) checkedTasks--
             document.getElementById(`toDoTask-${i}`).remove()
             numTasks--
             updatePercentage()
@@ -177,6 +178,7 @@ function addTaskToProject() {
 }
 function updatePercentage() {
     let percentage = checkedTasks / numTasks * 100
+    if (isNaN(percentage)) percentage = 0
     percentajeVariable.style.width = `${percentage}%`
     percentajeProjectText.innerText = `${Math.round(percentage)}%`
 }
