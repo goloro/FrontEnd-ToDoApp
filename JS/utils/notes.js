@@ -24,6 +24,7 @@ createNoteBtn.addEventListener("click", e => {
 function loadNotes(firstNote) {
     // TODO: check if the text is empty and delete it
     // TODO: store in BBDD
+    // TODO: Change the ID for the ID from the BBDD
     if (firstNote) {
         notesSubContainer.style.display = "flex"
         noNotesText.style.display = "none"

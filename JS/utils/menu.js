@@ -15,6 +15,7 @@ const noProjectsTextProjects = document.getElementById("noProjectsTextProjects")
 const projectsContainer = document.getElementById("projectsContainer")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
 const workAreaContainer = document.getElementById("workAreaContainer")
+const workAreaSubContainer = document.getElementById("workAreaSubContainer")
 const newProjectContainer = document.getElementById("newProjectsContainer")
 
 // EVENT LISTENERS
@@ -52,6 +53,7 @@ function hideAll () {
 function showProjects () {
     if (projectsSubContainer.children.length === 0) { //Check for projects
         noProjectsTextProjects.style.display = "flex"
+        projectsSubContainer.style.display = "none"
     } else {
         noProjectsTextProjects.style.display = "none"
     }
@@ -62,6 +64,7 @@ function showProjects () {
 function showWorkArea () {
     if (projectsSubContainer.children.length === 0) { //Check for projects
         noProjectsTextWA.style.display = "flex"
+        workAreaSubContainer.style.display = "none"
     } else {
         noProjectsTextWA.style.display = "none"
     }

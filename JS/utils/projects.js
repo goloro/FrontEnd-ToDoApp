@@ -1,10 +1,11 @@
 // IMPORTS
 import { AlertsClass } from '../utils/alerts.js'
-import { hideAll, showWorkArea } from '../utils/menu.js';
+import { hideAll, showProjects, showWorkArea } from '../utils/menu.js';
 
 // CONSTANTS
 // Buttons
 const createProjectBtn = document.getElementById("createNewProjectButton")
+const returnWorkAreaBtn = document.getElementById("workAreaTopReturnButton")
 
 // Text
 const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
@@ -27,6 +28,7 @@ const previewText = document.getElementById("newProjectPreviewText")
 
 // Containers
 const workAreaTop = document.getElementById("workAreaTop")
+const deleteProject = document.getElementById("workAreaTopDeleteDiv")
 const addTask = document.getElementById("addTaskDiv")
 const toDoListContainer = document.getElementById("toDoListContainer")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
@@ -40,6 +42,7 @@ let textColor = "#000000"
 let numProjects = 0
 let numTasks = 0
 let checkedTasks = 0
+let currentProject = null
 
 // EVENT LISTENERS
 createProjectBtn.addEventListener("click", e => {
@@ -55,6 +58,10 @@ createProjectBtn.addEventListener("click", e => {
         loadProjectsWorkArea(titleInput.value, background1, background2, textColor, firstProject)
         hideAll()
         showWorkArea()
+        loadDefaultValuesNewProject()
+        currentProject = numProjects
+        numProjects++
+        toDoListContainer.innerHTML = ""
         new AlertsClass("success", "Project created successfully", null)
     }
 })
@@ -109,6 +116,28 @@ colorTextInputText.addEventListener("keydown", e => {
 addTask.addEventListener("click", e => {
     addTaskToProject()
 })
+returnWorkAreaBtn.addEventListener("click", e => {
+    hideAll()
+    showProjects()
+})
+deleteProject.addEventListener("click", e => {
+    // TODO: Delete project (BBDD)
+    // TODO: Change view to projects view
+    // TODO: Change the selected default project
+    // TODO: Change the way to show the las project 
+    document.getElementById(`project-${currentProject}`).remove()
+    hideAll()
+    showProjects()
+    if (numProjects > 0) loadDefaultProject()
+    else {
+        // TODO: Get the last project from the BBDD and show all the information
+        // IT WILL BE THE LAST PROJECT FROM THE BBDD
+        loadDefaultProject()
+    }
+    
+    numProjects--
+    currentProject = numProjects
+})
 
 // FUNCTION
 function checkFieldsEmpty() {
@@ -117,6 +146,26 @@ function checkFieldsEmpty() {
         return true
     }
     return false
+}
+
+function loadDefaultValuesNewProject() {
+    titleInput.value = ""
+    colorBackgroundInputPicker1.value = "#A4DFEF"
+    colorBackgroundInputText1.value = ""
+    colorBackgroundInputPicker2.value = "#00C6FB"
+    colorBackgroundInputText2.value = ""
+    colorTextInputPicker.value = "#000000"
+    colorTextInputText.value = ""
+    previewDiv.style.background = `linear-gradient(to bottom, #A4DFEF, #00C6FB)`
+    previewText.style.color = "#000000"
+    previewText.innerText = "Project Title"
+    background1 = "#A4DFEF"
+    background2 = "#00C6FB"
+    textColor = "#000000"
+}
+
+function loadDefaultProject() {
+    loadProjectsWorkArea("Project Title", "#a4dfef", "#00c6fb", "#000000", false)
 }
 
 function loadProjectsWorkArea(title, background1, background2, textColor, firstProject) {
@@ -130,6 +179,7 @@ function loadProjectsWorkArea(title, background1, background2, textColor, firstP
 }
 
 function loadProjectsProjectsView(title, background1, background2, textColor, firstProject) {
+    // TODO: Change the ID for the ID from the BBDD
     if (firstProject) {
         noProjectsTextProjects.style.display = "none"
         projectsSubContainer.style.display = "grid"
@@ -139,7 +189,20 @@ function loadProjectsProjectsView(title, background1, background2, textColor, fi
                                    </div>`;
     document.getElementById(`project-${numProjects}`).style.background = `linear-gradient(to bottom, ${background1}, ${background2})`
     document.getElementById(`projectTitle-${numProjects}`).style.color = textColor
-    numProjects++
+
+    for (let i = 0; i <= numProjects; i++) {
+        document.getElementById(`project-${i}`).addEventListener("click", e => {
+            // TODO: Get the project information from the BBDD
+            hideAll()
+            showWorkArea()
+
+            // TEMPORAL
+            let title = e.currentTarget.children[0].innerText
+            let textColor = e.currentTarget.children[0].style.color
+            loadProjectsWorkArea(title, background1, background2, textColor, firstProject)
+            workAreaTop.style.background = e.currentTarget.style.background
+        })
+    }
 }
 function addTaskToProject() {
     // TODO: Add task to project (BBDD)
@@ -147,6 +210,7 @@ function addTaskToProject() {
     // TODO: Delete task by clicking the delete icon
     // TODO: Store the tasks in the BBDD
     // TODO: Don´t allow to add more than 1 empty task
+    // TODO: Change the ID for the ID from the BBDD
     toDoListContainer.innerHTML += `<div class="toDoTask" id="toDoTask-${numTasks}">
                                         <img id="checkPNGTask-${numTasks}" src="../Images/checkbox-unchecked.png">
                                         <input class="task" id="task-${numTasks}" maxlength="40" placeholder="This is a task"></input>
