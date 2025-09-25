@@ -10,6 +10,7 @@ const createProjectBtn = document.getElementById("createNewProjectButton")
 const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
 const noProjectsTextProjects = document.getElementById("noProjectsTextProjects")
 const projectWorkAreaTitleText = document.getElementById("workAreaTopProjectTitle")
+const percentajeProjectText = document.getElementById("percentajeProject")
 
 // Inputs
 const titleInput = document.getElementById("newProjectTitleInput")
@@ -30,12 +31,15 @@ const addTask = document.getElementById("addTaskDiv")
 const toDoListContainer = document.getElementById("toDoListContainer")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
 const workAreaSubContainer = document.getElementById("workAreaSubContainer")
+const percentajeVariable = document.getElementById("percentajeVariable")
 
 // VARIABLES
 let background1 = "#A4DFEF"
 let background2 = "#00C6FB"
 let textColor = "#000000" 
 let numProjects = 0
+let numTasks = 0
+let checkedTasks = 0
 
 // EVENT LISTENERS
 createProjectBtn.addEventListener("click", e => {
@@ -139,9 +143,40 @@ function loadProjectsProjectsView(title, background1, background2, textColor, fi
 }
 function addTaskToProject() {
     // TODO: Add task to project (BBDD)
-    toDoListContainer.innerHTML += `<div class="toDoTask">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 21 21"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" d="M5.5 3.5h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2"/></svg>
-                                        <input class="task" maxlength="40" placeholder="This is a task"></input>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#f25050" d="M7.378 5.531a2.75 2.75 0 0 1 1.92-.781h10.297c.598 0 1.294.166 1.863.519c.579.358 1.11.974 1.11 1.856v9.75c0 .882-.531 1.497-1.11 1.856a3.65 3.65 0 0 1-1.863.519H9.298a2.75 2.75 0 0 1-1.92-.781l-5.35-5.216a1.75 1.75 0 0 1 0-2.506zM14.03 9.47a.75.75 0 1 0-1.06 1.06L14.44 12l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L16.56 12l1.47-1.47a.75.75 0 1 0-1.06-1.06l-1.47 1.47z"/></svg>
+    // TODO: Change by clickng the icon to a marked task
+    // TODO: Delete task by clicking the delete icon
+    // TODO: Store the tasks in the BBDD
+    // TODO: Don´t allow to add more than 1 empty task
+    toDoListContainer.innerHTML += `<div class="toDoTask" id="toDoTask-${numTasks}">
+                                        <img id="checkPNGTask-${numTasks}" src="../Images/checkbox-unchecked.png">
+                                        <input class="task" id="task-${numTasks}" maxlength="40" placeholder="This is a task"></input>
+                                        <svg id="deleteSVGTask-${numTasks}" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#f25050" d="M7.378 5.531a2.75 2.75 0 0 1 1.92-.781h10.297c.598 0 1.294.166 1.863.519c.579.358 1.11.974 1.11 1.856v9.75c0 .882-.531 1.497-1.11 1.856a3.65 3.65 0 0 1-1.863.519H9.298a2.75 2.75 0 0 1-1.92-.781l-5.35-5.216a1.75 1.75 0 0 1 0-2.506zM14.03 9.47a.75.75 0 1 0-1.06 1.06L14.44 12l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L16.56 12l1.47-1.47a.75.75 0 1 0-1.06-1.06l-1.47 1.47z"/></svg>
                                     </div>`
+    numTasks++
+    updatePercentage()
+
+    for (let i = 0; i < numTasks; i++) {
+        document.getElementById(`checkPNGTask-${i}`).addEventListener("click", e => {
+            if (e.currentTarget.src.includes('checkbox-unchecked.png')) {
+                e.currentTarget.src = "../Images/checkbox-checked.png"
+                document.getElementById(`task-${i}`).style.textDecoration = "line-through"
+                checkedTasks++
+            } else {
+                e.currentTarget.src = "../Images/checkbox-unchecked.png"
+                document.getElementById(`task-${i}`).style.textDecoration = "none"
+                checkedTasks--
+            }
+            updatePercentage()
+        })
+        document.getElementById(`deleteSVGTask-${i}`).addEventListener("click", e => {
+            document.getElementById(`toDoTask-${i}`).remove()
+            numTasks--
+            updatePercentage()
+        })
+    }
+}
+function updatePercentage() {
+    let percentage = checkedTasks / numTasks * 100
+    percentajeVariable.style.width = `${percentage}%`
+    percentajeProjectText.innerText = `${Math.round(percentage)}%`
 }

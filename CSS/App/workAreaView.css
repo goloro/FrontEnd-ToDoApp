@@ -70,7 +70,7 @@
             background-color: #a3a2a2;
             border-radius: 3px;
         }
-        .percentajeVariable {
+        #percentajeVariable {
             height: 1vh;
             width: 0%; /* CHANGE BY PERCENTAJE */
             background-color: #67D980;
@@ -115,7 +115,7 @@
             margin: auto;
             overflow-y: scroll;
             display: grid;
-            grid-template-columns: auto auto auto auto;
+            grid-template-columns: auto auto auto;
         }
         .toDoListContainer::-webkit-scrollbar { width: 0.75vh; } 
         .toDoListContainer::-webkit-scrollbar-thumb { background: #a3a2a2;  border-radius: 10px; }
@@ -126,9 +126,10 @@
                 width: 80%;
                 height: 4vh;
             }
-            .toDoTask svg {
+            .toDoTask img {
                 margin: auto 0.2vh auto 0.2vh;
                 cursor: pointer;
+                height: 3vh;
             }
             .task {
                 margin: auto;
