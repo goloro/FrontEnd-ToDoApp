@@ -62,6 +62,7 @@ createProjectBtn.addEventListener("click", e => {
         currentProject = numProjects
         numProjects++
         toDoListContainer.innerHTML = ""
+        numTasks = 0
         new AlertsClass("success", "Project created successfully", null)
     }
 })
@@ -137,6 +138,7 @@ deleteProject.addEventListener("click", e => {
     
     numProjects--
     currentProject = numProjects
+    new AlertsClass("success", "Project deleted successfully", null)
 })
 
 // FUNCTION
