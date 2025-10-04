@@ -21,15 +21,15 @@
         </div>
 
         <div class="login-sign">
-            <div class="form-container">
+            <div class="form-container" id="form-container">
                 <form class="form-users" id="form-login">
                     <div class="form-subDiv">
                         <img src="https://api.iconify.design/fluent/mail-16-regular.svg?color=%23222">
-                        <input type="text" placeholder="Mail">
+                        <input id="inputLoginEmail" type="text" placeholder="Mail">
                     </div>
                     <div class="form-subDiv">
                         <img src="https://api.iconify.design/akar-icons/lock-off.svg?color=%23222">
-                        <input type="password" placeholder="Password">
+                        <input id="inputLoginPassword" type="password" maxlength="50" placeholder="Password">
                     </div>
 
                     <button class="button-form" id="button-login" type="submit">SIGN IN</button>
@@ -40,20 +40,20 @@
                 <form class="form-users" id="form-sign"> <!-- TODO: INVISIBLE -->
                     <div class="form-subDiv">
                         <img src="https://api.iconify.design/carbon/user-avatar-filled-alt.svg?color=%23222">
-                        <input type="text" placeholder="Username">
+                        <input id="inputSignUsername" type="text" maxlength="15" placeholder="Username">
                     </div>
                     <div class="form-subDiv">
                         <img src="https://api.iconify.design/fluent/mail-16-regular.svg?color=%23222">
-                        <input type="text" placeholder="Mail">
+                        <input id="inputSignEmail" type="text" placeholder="Mail">
                     </div>
                     <div class="form-subDiv">
                         <img src="https://api.iconify.design/akar-icons/lock-off.svg?color=%23222">
-                        <input type="password" placeholder="Password">
+                        <input id="inputSignPassword" type="password" maxlength="50" placeholder="Password">
                     </div>
 
                     <button class="button-form" id="button-sign" type="submit">SIGN UP</button>
 
-                    <p id="signUpTxt">YOU ALREADY HAVE AN ACOUNT? <span id="change-login">SIGN IN</span></p>
+                    <p id="signUpTxt">DO YOU ALREADY HAVE AN ACCOUNT? <span id="change-login">LOG IN</span></p>
                 </form>
             </div>
         </div>
@@ -65,6 +65,6 @@
             </div>
         </div>
 
-        <script src="JS/loginGitHub.js" type="module"></script>
+        <script src="JS/funcionalities/users.js" type="module"></script>
     </body>
 </html>

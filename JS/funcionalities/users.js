@@ -1,120 +1,82 @@
 // IMPORTS
-import { UserServiceClass } from '../service/userService.js'
-import { AlertsClass } from '../utils/alerts.js'
+import { UserServiceClass } from "../service/userService.js"
+import { AlertsClass } from "../utils/alerts.js"
 
 // CONSTANTS
+// Service
 const UserService = new UserServiceClass()
 
-const container = document.getElementById("usersContent")
+// Text
+const inputLoginEmail = document.getElementById("inputLoginEmail")
+const inputLoginPassword = document.getElementById("inputLoginPassword")
+const inputSignUsername = document.getElementById("inputSignUsername")
+const inputSignEmail = document.getElementById("inputSignEmail")
+const inputSignPassword = document.getElementById("inputSignPassword")
+
+// Buttons
+const loginBTN = document.getElementById("button-login")
+const signBTN = document.getElementById("button-sign")
+const changeFormSignUp = document.getElementById("change-signUp")
+const changeFormSignIn = document.getElementById("change-login")
+
+// Form Containers
+const formsContainer = document.getElementById("form-container")
 const formLogin = document.getElementById("form-login")
-const formRegistro = document.getElementById("form-registro")
-const signUp = document.getElementById("signUp")
-const signIn = document.getElementById("signIn")
-const logSign = document.getElementById("logSign")
+const formSignUp = document.getElementById("form-sign")
 
-const logBTN = document.getElementById("loginBTN")
-const signBTN = document.getElementById("signBTN")
-
-const usernameSU = document.getElementById("signUSERNAME")
-const emailSU = document.getElementById("signEMAIL")
-const passwordSU = document.getElementById("signPASS")
-
-// VIEW LOGIN/REGISTRO
-signUp.addEventListener("click", function mostrarRegistro() {
-    formRegistro.style.display = "flex"
+// EVENT LISTENERS
+changeFormSignUp.addEventListener("click", () => {
     formLogin.style.display = "none"
-    container.style.height = "77%"
-    logSign.innerHTML = " Sign up"
-
+    formSignUp.style.display = "flex"
+    formsContainer.style.height = "60vh"
 })
-signIn.addEventListener("click", function mostrarLogin() {
-    formRegistro.style.display = "none"
+changeFormSignIn.addEventListener("click", () => {
     formLogin.style.display = "flex"
-    container.style.height = "60%"
-    logSign.innerHTML = " Log in"
+    formSignUp.style.display = "none"
+    formsContainer.style.height = "50vh"
 })
-
-// LOGIN
-logBTN.addEventListener("click", async e => {
+loginBTN.addEventListener("click", (e) => {
     e.preventDefault()
-     
-    const email = document.getElementById("loginEMAIL")
-    const password = document.getElementById("loginPASS")
-
-    const request = await UserService.login(email.value, password.value)
-
-    if (request.successfull) {
-        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
-
-        window.open('./HTML/app.html', '_self')
-    } else {
-        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Username or email aren´t correct or not registered", "#E95E5E")
-        
-        email.value = ""
-        password.value = ""
-    }
+    login(inputLoginEmail.value, inputLoginPassword.value)
 })
-
-// SIGN UP
-signBTN.addEventListener("click", async e => {
+signBTN.addEventListener("click", (e) => {
     e.preventDefault()
-
-    /*if (!checkEmail(emailSU.value)) {
-        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Invalid email", "#E95E5E")
-        
-        return
-    } else if (!checkPassword(passwordSU.value)) {
-        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Invalid password", "#E95E5E")
-        
-        return
-    }*/
-
-    const request = await UserService.register({
-        username: usernameSU.value,
-        email: emailSU.value,
-        password: passwordSU.value,
-        icon: null
-    })
- 
-    if (request.successfull) {
-        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
-
-        window.open('./HTML/app.html', '_self')
-    } else {
-        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Internal Error, try in a few minutes", "#E95E5E")
-        clearSignUpForm()
-    }
+    signUp(inputSignUsername.value, inputSignEmail.value, inputSignPassword.value)
 })
 
 // FUNCTIONS
-function clearSignUpForm() {
-    usernameSU.value = ""
-    emailSU.value = ""
-    passwordSU.value = ""
-}
-function checkEmail(email) {
-    const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if (EMAIL_REGEX.test(email)) return true
+async function login(email, password) {
+    // TODO: check email with regex
+    // TODO: fix when login fails, the app crashes
 
-    usernameSU.value = ""
-    return false
-}
-function checkPassword(password) {
-    const PASSWORD_REGEX = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$")
-    if (password.match(PASSWORD_REGEX)) return true
+    const request = await UserService.login(email, password)
 
-    passwordSU.value = ""
-    return false
+    if (request.successfull) {
+        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
 
-    /*
-    At least one digit [0-9]
-    At least one lowercase character [a-z]
-    At least one uppercase character [A-Z]
-    At least one special character [*.!@#$%^&(){}[]:;<>,.?/~_+-=|\]
-    At least 8 characters in length, but no more than 32.
-    */
+        window.open('../../HTML/app.html', '_self')
+    } else {
+        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Username or email aren´t correct or not registered", "#E95E5E")
+        inputLoginEmail.value = ""
+        inputLoginPassword.value = ""
+    }
 }
 
-// TERMINAR CHECK DE PASSWORD (poner en html un i con información de la contraseña regex)
-// SI EL CORREEO YA ESTÁ REGISTRADO MANDARLE A LOGIN PONIENDO EL CORREO EN EL INPUT
-// CREAR RECUPERAR CUENTA
+async function signUp(username, email, password) {
+    // TODO: check email with regex
+
+    const request = await UserService.signUp({username: username, email: email, password: password})
+
+    if (request.successfull) {
+        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
+
+        window.open('../../HTML/app.html', '_self')
+    } else {
+        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Username or email are already registered", "#E95E5E")
+        inputSignUsername.value = ""
+        inputSignEmail.value = ""
+        inputSignPassword.value = ""
+    }
+}
+
+// EXPORTS
