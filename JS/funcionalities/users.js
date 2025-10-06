@@ -54,7 +54,7 @@ async function login(email, password) {
     if (request.successfull) {
         localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
 
-        window.open('../../HTML/app.html', '_self')
+        window.open('HTML/app.html', '_self')
     } else {
         new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Username or email aren´t correct or not registered", "#E95E5E")
         inputLoginEmail.value = ""
