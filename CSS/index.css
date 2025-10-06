@@ -66,21 +66,23 @@ body {
 }
 
 .button-form {
+    display: flex;
     width: 40%;
     height: 5vh;
     margin: 10% auto 0 auto;
-    padding: auto;
-    text-align: center;
     background-color: #002233;
-    color: white;
     border: none;
     border-radius: 5px;
-    font-family: "Baloo Bhai 2", sans-serif;
-    font-size: large;
     cursor: pointer;
 }
+    .button-form p {
+        margin: auto;
+        font-family: "Baloo Bhai 2", sans-serif;
+        font-size: large;
+        color: white;
+    }
 
-.form-users p {
+.form-users-p {
     font-family: "Baloo Bhai 2", sans-serif;
     font-size: small;
     margin: 5% auto auto auto;

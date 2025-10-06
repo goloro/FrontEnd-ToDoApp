@@ -47,7 +47,6 @@ signBTN.addEventListener("click", (e) => {
 // FUNCTIONS
 async function login(email, password) {
     // TODO: check email with regex
-    // TODO: fix when login fails, the app crashes
 
     const request = await UserService.login(email, password)
 
