@@ -66,6 +66,8 @@ async function signUp(username, email, password) {
 
     const request = await UserService.signUp({username: username, email: email, password: password})
 
+    console.log(request)
+
     if (request.successfull) {
         localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
 

@@ -1,5 +1,5 @@
 // IMPORTS
-import { RequestHandlerClass } from "./requestHandler";
+import { RequestHandlerClass } from "./requestHandler.js";
 
 // CONSTANTS
 const SERVICE_URL = "/start"
