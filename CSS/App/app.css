@@ -46,6 +46,9 @@ body {
                 height: 3vh;
                 margin: auto;
             }
+            #userMenuNavBarLogoutIcon {
+                cursor: pointer;
+            }
             .userMenuNavBar p {
                 margin: auto;
                 font-size: large;

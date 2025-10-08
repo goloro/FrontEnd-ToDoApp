@@ -3,7 +3,7 @@
 const projectsBtn = document.getElementById("projectsNavBar")
 const workAreaBtn = document.getElementById("workAreaNavBar")
 const newProjectBtn = document.getElementById("newProjectNavBar")
-const logoutBtn = document.getElementById("logoutNavBar")
+const logoutBtn = document.getElementById("userMenuNavBarLogoutIcon")
 const noProjectsCreateProjectBtnPR = document.getElementById("noProjectsCreateProjectSpan-PR")
 const noProjectsCreateProjectBtnWA = document.getElementById("noProjectsCreateProjectSpan-WA")
 
@@ -38,6 +38,10 @@ noProjectsCreateProjectBtnPR.addEventListener("click", e => {
 noProjectsCreateProjectBtnWA.addEventListener("click", e => {
     hideAll()
     showNewProject()
+})
+logoutBtn.addEventListener("click", e => {
+    localStorage.removeItem("TDA_USER_LOGUED")
+    window.open('/FrontEnd-ToDoApp/index.html', '_self')
 })
 
 // FUNCTIONS
