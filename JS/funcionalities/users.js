@@ -50,7 +50,7 @@ async function login(email, password) {
 
     const request = await UserService.login(email, password)
 
-    if (request.successfull) {
+    if (request.successful) {
         localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
 
         window.open('HTML/app.html', '_self')
@@ -68,7 +68,7 @@ async function signUp(username, email, password) {
 
     console.log(request)
 
-    if (request.successfull) {
+    if (request.successful) {
         localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
 
         window.open('HTML/app.html', '_self')
