@@ -11,7 +11,7 @@ class StartServiceClass {
     constructor() {}
 
     async start() {
-        return await RequestHandler.post(SERVICE_URL, {});
+        return await RequestHandler.getDefault(SERVICE_URL, {});
     }
 }
 

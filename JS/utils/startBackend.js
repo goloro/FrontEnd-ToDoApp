@@ -5,4 +5,8 @@ import { StartServiceClass } from "../service/startService.js"
 const StartService = new StartServiceClass()
 
 // START BACKEND
-StartService.start()
+const request = await StartService.start()
+
+if (request.successfull) {
+    document.getElementById("loading-Screen").style.display = "none"
+}
