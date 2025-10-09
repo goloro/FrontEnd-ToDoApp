@@ -1,4 +1,7 @@
 // CONSTANTS
+// Service
+const noteService = new NoteServiceClass()
+
 // Buttons
 const createNoteBtn = document.getElementById("createNoteButton")
 
@@ -33,6 +36,15 @@ function loadNotes(firstNote) {
     notesSubContainer.innerHTML += `<div class="note" id="note-${numNotes}">
                             <textarea class="noteText" id="noteText-${numNotes}" placeholder="Esto es una nota" ></textarea>
                         </div>`
+
+    const request = await 
+
+    for (let i = 0; i <= numNotes; i++) {
+        document.getElementById(`note-${i}`).addEventListener("click", e => {
+            // TODO: Update the note
+            // TODO: Store the note in the BBDD
+        })
+    }
     
     numNotes++
 }
