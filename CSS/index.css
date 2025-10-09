@@ -109,7 +109,7 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px);
 }
-    #charging-Screen p {
+    #loading-Screen p {
         margin: auto;
         font-family: "Baloo Bhai 2", sans-serif;
         font-size: xx-large;
