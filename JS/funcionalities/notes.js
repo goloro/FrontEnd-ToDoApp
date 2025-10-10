@@ -1,6 +1,13 @@
+// IMPORTS
+import { NoteServiceClass } from "../service/noteService.js"
+import { AlertsClass } from "../utils/alerts.js"
+
 // CONSTANTS
 // Service
 const noteService = new NoteServiceClass()
+
+// User
+const user = JSON.parse(localStorage.getItem("TDA_USER_LOGUED"))
 
 // Buttons
 const createNoteBtn = document.getElementById("createNoteButton")
@@ -12,41 +19,56 @@ const noNotesText = document.getElementById("noNotesText")
 const notesSubContainer = document.getElementById("notesSubContainer")
 
 // VARIABLES
-let numNotes = 0
+let notesIds = []
 
 // EVENT LISTENERS
 createNoteBtn.addEventListener("click", e => {
-    // TODO: check if the text is empty and delete it
-    // TODO: store in BBDD
-    let firstNote = false
-    if (notesSubContainer.children.length === 0) firstNote = true
-    loadNotes(firstNote)
+    loadNotes()
 })
 
 // FUNCTIONS
-function loadNotes(firstNote) {
-    // TODO: check if the text is empty and delete it
-    // TODO: store in BBDD
-    // TODO: Change the ID for the ID from the BBDD
-    if (firstNote) {
+async function loadNotes() {
+    const createRequest = await noteService.createNote({
+        owner: user._id,
+        title: ""
+    })
+
+    if (!createRequest.successful) {
+        if (createRequest.alreadyEmpty) {
+            new AlertsClass("error", "You can't create more than one note empty")
+            return
+        } else {
+            new AlertsClass("error", "Error creating note")
+            return
+        }
+    }
+
+    if (notesIds.length === 0) {
         notesSubContainer.style.display = "flex"
         noNotesText.style.display = "none"
     }
 
-    notesSubContainer.innerHTML += `<div class="note" id="note-${numNotes}">
-                            <textarea class="noteText" id="noteText-${numNotes}" placeholder="Esto es una nota" ></textarea>
+    const noteData = createRequest.noteData
+    notesIds.push(noteData._id)
+
+    notesSubContainer.innerHTML += `<div class="note" id="note-${noteData._id}">
+                            <textarea class="noteText" id="noteText-${noteData._id}" placeholder="Esto es una nota" ></textarea>
                         </div>`
 
-    const request = await 
+    for (let i = 0; i < notesIds.length; i++) {
+        document.getElementById(`note-${notesIds[i]}`).addEventListener("click", e => {
+            const updateRequest = noteService.updateNote(notesIds[i], {
+                title: document.getElementById(`noteText-${notesIds[i]}`).value
+            })
 
-    for (let i = 0; i <= numNotes; i++) {
-        document.getElementById(`note-${i}`).addEventListener("click", e => {
-            // TODO: Update the note
-            // TODO: Store the note in the BBDD
+            console.log(updateRequest)
+
+            if (!updateRequest.successful) {
+                new AlertsClass("error", "Something went wrong")
+                return
+            }
         })
     }
-    
-    numNotes++
 }
 function saveNote(id, text) {
     localStorage.setItem(`TDA_NOTE_${id}`, JSON.stringify(text))

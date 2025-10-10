@@ -55,7 +55,7 @@ async function login(email, password) {
 
         window.open('HTML/app.html', '_self')
     } else {
-        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Username or email aren´t correct or not registered", "#E95E5E")
+        new AlertsClass("error", "Username or email aren´t correct or not registered")
         inputLoginEmail.value = ""
         inputLoginPassword.value = ""
     }
@@ -73,7 +73,7 @@ async function signUp(username, email, password) {
 
         window.open('HTML/app.html', '_self')
     } else {
-        new AlertsClass("https://api.iconify.design/bx/error.svg?color=white", "Username or email are already registered", "#E95E5E")
+        new AlertsClass("error", "Username or email are already registered")
         inputSignUsername.value = ""
         inputSignEmail.value = ""
         inputSignPassword.value = ""
