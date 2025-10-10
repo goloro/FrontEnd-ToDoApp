@@ -24,6 +24,11 @@ const formsContainer = document.getElementById("form-container")
 const formLogin = document.getElementById("form-login")
 const formSignUp = document.getElementById("form-sign")
 
+// CHECK IF USER IS LOGUED
+if (localStorage.getItem("TDA_USER_LOGUED")) {
+    window.open('HTML/app.html', '_self')
+}
+
 // EVENT LISTENERS
 changeFormSignUp.addEventListener("click", () => {
     formLogin.style.display = "none"
@@ -65,8 +70,6 @@ async function signUp(username, email, password) {
     // TODO: check email with regex
 
     const request = await UserService.signUp({username: username, email: email, password: password})
-
-    console.log(request)
 
     if (request.successful) {
         localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))

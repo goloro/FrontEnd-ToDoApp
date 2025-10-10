@@ -1,0 +1,65 @@
+#loading-Screen {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+    #loading-Screen p {
+        margin: auto;
+        font-family: "Baloo Bhai 2", sans-serif;
+        font-size: xx-large;
+        color: white;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #loader {
+        border: 2.5px solid #f3f3f3;
+        border-radius: 50%;
+        width: 10vh;
+        height: 10vh;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: conic-gradient(#2158E6 0deg, transparent 0deg);
+        animation: fillLoader 5s linear infinite;
+    }
+    @keyframes fillLoader {
+        0% {
+            background: conic-gradient(#2158E6 0deg, transparent 0deg);
+        }
+        10% {
+            background: conic-gradient(#2158E6 36deg, transparent 36deg);
+        }
+        20% {
+            background: conic-gradient(#2158E6 72deg, transparent 72deg);
+        }
+        30% {
+            background: conic-gradient(#2158E6 108deg, transparent 108deg);
+        }
+        40% {
+            background: conic-gradient(#2158E6 144deg, transparent 144deg);
+        }
+        50% {
+            background: conic-gradient(#2158E6 180deg, transparent 180deg);
+        }
+        60% {
+            background: conic-gradient(#2158E6 216deg, transparent 216deg);
+        }
+        70% {
+            background: conic-gradient(#2158E6 252deg, transparent 252deg);
+        }
+        80% {
+            background: conic-gradient(#2158E6 288deg, transparent 288deg);
+        }
+        90% {
+            background: conic-gradient(#2158E6 324deg, transparent 324deg);
+        }
+        100% {
+            background: conic-gradient(#2158E6 360deg, transparent 360deg);
+        }
+    }

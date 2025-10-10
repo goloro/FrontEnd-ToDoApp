@@ -8,6 +8,7 @@
 
         <link rel="shortcut icon" href="../Images/ToDoApp.png">
 
+        <link rel="stylesheet" href="../CSS/General/loader.css">
         <link rel="stylesheet" href="../CSS/General/alert.css">
         <link rel="stylesheet" href="../CSS/App/app.css">
         <link rel="stylesheet" href="../CSS/App/projectsView.css">
@@ -185,6 +186,12 @@
             </div>
         </div>
 
+        <div id="loading-Screen">
+            <p>Loading<span id="loadingDots">...</span></p>
+            <div id="loader"></div>
+        </div>
+
+        <script src="../JS/utils/startBackend.js" type="module"></script>
         <script src="../JS/utils/checkLogin.js" type="module"></script>
         <!--<script src="../JS/utils/logout.js" type="module"></script>-->
         <script src="../JS/utils/menu.js" type="module"></script>

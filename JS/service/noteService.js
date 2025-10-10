@@ -39,10 +39,10 @@ class NoteServiceClass {
     }
 
     // Get notes of a user (GET /getByUser/:userId)
-    async getAllNotesByUserId(userId) {
-        const getAllNotesByUserIdURL = SERVICE_URL + `/getByUser/${userId}`
+    async getNotesByUserId(userId) {
+        const getNotesByUserIdURL = SERVICE_URL + `/getByUser/${userId}`
 
-        return await RequestHandler.getDefault(getAllNotesByUserIdURL)
+        return await RequestHandler.getDefault(getNotesByUserIdURL)
     }
 }
 
