@@ -41,8 +41,7 @@ class RequestHandlerClass {
             method: 'DELETE',
             headers:{'Content-Type': 'application/json'}
         })
-        if (res.status === 200) return true
-        return false
+        return await res.json()
     }
 }
 

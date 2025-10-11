@@ -20,6 +20,7 @@ const notesSubContainer = document.getElementById("notesSubContainer")
 
 // VARIABLES
 let notesIds = []
+let noteEmpty = { exists: false, id: null }
 
 // LOAD NOTES
 await loadNotesBBDD()
@@ -29,10 +30,12 @@ createNoteBtn.addEventListener("click", e => {
     createNote()
 })
 
-// FUNCTIONS
-// TODO: Save all notes when close window
-// TODO: Delete note when text is empty if there exists one more
+window.addEventListener("beforeunload", async (e) => {
+    await deleteEmptyNote()
+    await saveNotes()
+});
 
+// FUNCTIONS
 // Create note and load it
 async function createNote() {
     const createRequest = await noteService.createNote({
@@ -41,7 +44,7 @@ async function createNote() {
     })
 
     if (!createRequest.successful) {
-        if (createRequest.alreadyEmpty) {
+        if (noteEmpty.exists) {
             new AlertsClass("error", "You can't create more than one note empty")
             return
         } else {
@@ -66,25 +69,45 @@ async function createNote() {
 
 // Load note to Container
 async function loadNote(noteData) {
-    notesSubContainer.innerHTML += `<div class="note" id="note-${noteData._id}">
-                            <textarea class="noteText" id="noteText-${noteData._id}" placeholder="Esto es una nota" ></textarea>
-                        </div>`
-    
-    document.getElementById(`noteText-${noteData._id}`).value = noteData.title
+    notesSubContainer.insertAdjacentHTML('beforeend', `<div class="note" id="note-${noteData._id}">
+                            <textarea class="noteText" id="noteText-${noteData._id}" placeholder="Esto es una nota">${noteData.title}</textarea>
+                        </div>`)
 
-    for (let i = 0; i < notesIds.length; i++) {
-        document.getElementById(`note-${notesIds[i]}`).addEventListener("focusout", async (e) => {
-            
-            const updateRequest = await noteService.updateNote(notesIds[i], {
-                title: document.getElementById(`noteText-${notesIds[i]}`).value
-            })
-
-            if (!updateRequest.successful) {
-                new AlertsClass("error", "Something went wrong")
-                return
-            }
-        })
+    if (noteData.title === "") {
+        noteEmpty.exists = true
+        noteEmpty.id = noteData._id
     }
+
+    document.getElementById(`noteText-${noteData._id}`).addEventListener("focusout", async (e) => {
+        const noteTextValue = document.getElementById(`noteText-${noteData._id}`).value
+
+        if (noteEmpty.exists && noteEmpty.id != noteData._id && noteTextValue === "") {
+            const deleteRequest = await noteService.deleteNote(noteData._id)
+
+            notesIds.pop(noteData._id)
+            document.getElementById(`note-${noteData._id}`).remove()
+
+            if (!deleteRequest.successful) {
+                new AlertsClass("error", "Something went wrong")
+            }
+
+            return
+        }
+
+        if (noteEmpty.exists && noteEmpty.id === noteData._id && noteTextValue != "") {
+            noteEmpty.exists = false
+            noteEmpty.id = null
+        }
+
+        const updateRequest = await noteService.updateNote(noteData._id, {
+            title: noteTextValue
+        })
+
+        if (!updateRequest.successful) {
+            new AlertsClass("error", "Something went wrong")
+            return
+        }
+    })
 }
 
 // Load notes from BBDD
@@ -106,5 +129,20 @@ async function loadNotesBBDD() {
             
             loadNote(notes[i])
         }
+    }
+}
+
+// Delete empty note if exists
+async function deleteEmptyNote() {
+    if (noteEmpty.exists) {
+        await noteService.deleteNote(noteEmpty.id)
+    }
+}
+
+// Save notes
+async function saveNotes() {
+    for (let i = 0; i < notesIds.length; i++) {
+        const noteText = document.getElementById(`noteText-${notesIds[i]}`).value
+        await noteService.updateNote(notesIds[i], {title: noteText})
     }
 }
