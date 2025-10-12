@@ -9,4 +9,6 @@ const request = await StartService.start()
 
 if (request.successful) {
     document.getElementById("loading-Screen").style.display = "none"
+} else {
+    request = await StartService.start()
 }
