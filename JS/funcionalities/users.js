@@ -29,6 +29,8 @@ if (localStorage.getItem("TDA_USER_LOGUED")) {
     window.open('HTML/app.html', '_self')
 }
 
+// TODO: Delete and Update User
+
 // EVENT LISTENERS
 changeFormSignUp.addEventListener("click", () => {
     formLogin.style.display = "none"

@@ -11,12 +11,16 @@ const noProjectsCreateProjectBtnWA = document.getElementById("noProjectsCreatePr
 const noProjectsTextWA = document.getElementById("noProjectsTextWorkArea")
 const noProjectsTextProjects = document.getElementById("noProjectsTextProjects")
 
+// Inputs
+const projectDocumentation = document.getElementById("documentation")
+
 // Containers
 const projectsContainer = document.getElementById("projectsContainer")
 const projectsSubContainer = document.getElementById("projectsSubContainer")
 const workAreaContainer = document.getElementById("workAreaContainer")
 const workAreaSubContainer = document.getElementById("workAreaSubContainer")
 const newProjectContainer = document.getElementById("newProjectsContainer")
+const toDoListContainer = document.getElementById("toDoListContainer")
 
 // EVENT LISTENERS
 projectsBtn.addEventListener("click", e => {
@@ -64,6 +68,9 @@ function showProjects () {
 
     projectsContainer.style.display = "flex"
     projectsBtn.style.fontWeight = "bold"
+
+    toDoListContainer.innerHTML = ""
+    projectDocumentation.value = ""
 }
 function showWorkArea () {
     if (projectsSubContainer.children.length === 0) { //Check for projects
@@ -80,6 +87,9 @@ function showNewProject () {
     newProjectContainer.style.display = "flex"
 
     newProjectBtn.style.fontWeight = "bold"
+
+    toDoListContainer.innerHTML = ""
+    projectDocumentation.value = ""
 }
 
 // EXPORTS
