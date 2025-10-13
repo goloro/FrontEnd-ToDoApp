@@ -1,4 +1,4 @@
-#advertisemenContainer {
+#advertisementContainer {
     display: flex; /* TODO: DELETE - Default flex */
     position: fixed;
     width: 100%;
@@ -11,25 +11,83 @@
     flex-direction: column;
     margin: auto;
     width: 30%;
-    height: 60vh;
+    height: 80vh;
     background-color: white;
     border-radius: 15px;
 }
     #advertisementTitle {
         display: flex;
-        margin: 0 auto auto auto;
+        margin: 1vh auto 1vh auto;
         align-items: center;
-        height: 10vh;
+        height: 8vh;
         width: 100%;
     }
-    #advertisementTitle img {
-        height: 90%;
-        margin: auto 2.5% auto auto;
+        #advertisementTitle img {
+            height: 75%;
+            margin: auto 2.5% auto auto;
+        }
+        #advertisementTitle p {
+            font-size: xx-large;
+            font-weight: bold;
+            font-family: "Baloo Bhai 2", sans-serif;
+            margin: 1vh auto 1vh 2.5%;
+        }
+    #advertisementTexts {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 1vh auto;
+        width: 90%;
+        height: 52vh;
     }
-    #advertisementTitle p {
-        font-size: xxx-large;
-        font-weight: bold;
-        font-family: "Baloo Bhai 2", sans-serif;
-        margin: auto auto auto 2.5%;
+        .advertisementText {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            align-items: center;
+            height: 50%;
+            width: 100%;
+        }
+        .advertisementText img {
+            display: flex;
+            height: 15%;
+        }
+        .advertisementText p {
+            display: flex;
+            height: 80%;
+            width: 95%;
+            font-size: 11px;
+            text-align: justify;
+            font-family: 'Montserrat', sans-serif;
+        }
+    #acceptAdvertisementText {
+        display: flex;
+        margin: 0 auto 2vh auto;
+        width: 80%;
+        height: 4vh;
     }
-
+        #acceptAdvertisementText img {
+            margin: auto 1% auto auto;
+            height: 80%;
+            cursor: pointer; 
+        }
+        #acceptAdvertisementText p {
+            margin: 0 auto auto 1%;
+            font-size: 9px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: justify;
+        }
+    #acceptAdvertisementBtn {
+        display: flex;
+        margin: 1vh auto 2vh auto;
+        width: 50%;
+        height: 8vh;
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: #002233;
+    }
+        #acceptAdvertisementBtn p {
+            margin: auto;
+            font-size: large;
+            color: white;
+            font-family: "Baloo Bhai 2", sans-serif;
+        }

@@ -72,25 +72,39 @@
         </div>
 
         <!-- TODO: ADVERTISEMENT -->
-        <div id="advertisemenContainer">
+        <div id="advertisementContainer">
             <div id="advertisement">
                 <div id="advertisementTitle">
                     <img src="/Images/icon-danger.png">
                     <p>IMPORTANT</p>
                 </div>
                 <div id="advertisementTexts">
-                    <div id="advertisementTextSpanish">
+                    <div class="advertisementText" id="advertisementTextSpanish">
                         <img src="/Images/spanishFlag.png">
-                        <p></p>
+                        <p>
+                            ⚠️ Web de Desarrollo no Securizado ⚠️<br>
+                            Al continuar, usted reconoce y acepta que este sitio web actualmente no está asegurado y es únicamente para fines de desarrollo o prueba. 
+                            NO ingrese datos personales, contraseñas o información financiera reales. Usted utiliza esta plataforma completamente bajo su propio riesgo. 
+                            No nos hacemos responsables de ninguna consecuencia, pérdida o daño resultante del uso de datos reales en esta plataforma.
+                        </p>
                     </div>
-                    <div id="advertisementTextEnglish">
+                    <div class="advertisementText" id="advertisementTextEnglish">
                         <img src="/Images/greatbritainFlag.png">
-                        <p></p>
+                        <p>
+                            ⚠️ Unsecured Development Site ⚠️<br>
+                            By proceeding, you acknowledge and accept that this website is currently not secured and is for development or testing purposes only. 
+                            DO NOT enter any real personal data, passwords, or financial information. You use this platform entirely at your own risk. 
+                            We are not responsible for any consequences, losses, or damages resulting from the use of real data on this platform.
+                        </p>
                     </div>
                 </div>
                 <div id="acceptAdvertisementText">
-                    <img src="/Images/checkbox-unchecked.png">
-                    <p></p>
+                    <img id="acceptAdvertisementCheckbox" src="/Images/checkbox-unchecked.png">
+                    <p>
+                        Acepto que he leído y entendido el aviso de seguridad.
+                        <br>
+                        I acknowledge that I have read and understood the security notice.
+                    </p>
                 </div>
                 <div id="acceptAdvertisementBtn">
                     <p>Accept</p>
@@ -103,6 +117,7 @@
             <div id="loader"></div>
         </div>
 
+        <script src="JS/utils/advertisement.js" type="module"></script>
         <script src="JS/utils/startBackend.js" type="module"></script>
         <script src="JS/funcionalities/users.js" type="module"></script>
     </body>
