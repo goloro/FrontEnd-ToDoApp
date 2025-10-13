@@ -59,7 +59,7 @@ let checkedTasks = 0
 let taskEmpty = { exists: false, id: null }
 
 // LOAD PROJECTS
-await loadProjectsBBDD()
+if (user.projects) await loadProjectsBBDD()
 
 // EVENT LISTENER
 createProjectBtn.addEventListener("click", async (e) => {

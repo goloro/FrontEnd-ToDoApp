@@ -23,7 +23,7 @@ let notesIds = []
 let noteEmpty = { exists: false, id: null }
 
 // LOAD NOTES
-await loadNotesBBDD()
+if (user.notes) await loadNotesBBDD()
 
 // EVENT LISTENERS
 createNoteBtn.addEventListener("click", e => {

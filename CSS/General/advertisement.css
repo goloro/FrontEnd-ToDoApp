@@ -50,9 +50,11 @@
         .advertisementText img {
             display: flex;
             height: 15%;
+            margin: auto;
         }
         .advertisementText p {
             display: flex;
+            margin: auto;
             height: 80%;
             width: 95%;
             font-size: 11px;
