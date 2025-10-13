@@ -14,10 +14,10 @@ let textAccepted = false
 // EVENT LISTENERS
 acceptAdvertisementCheckbox.addEventListener("click", e => {
     if (e.currentTarget.src.includes('checkbox-unchecked.png')) {
-            e.currentTarget.src = "../Images/checkbox-checked.png"
+            e.currentTarget.src = "Images/checkbox-checked.png"
             textAccepted = true
         } else {
-            e.currentTarget.src = "../Images/checkbox-unchecked.png"
+            e.currentTarget.src = "Images/checkbox-unchecked.png"
             textAccepted = false
         }
 })
