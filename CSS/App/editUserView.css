@@ -1,0 +1,83 @@
+#editUserContainer {
+    display: none; /* Default: none | Optional: flex */
+    flex-direction: column;
+    background-color: white;
+}
+    #editUserContainerTitle {
+        width: 100%;
+        text-align: center;
+        color: black;
+        font-size: x-large;
+        font-weight: 500;
+        font-family: "M PLUS 2", sans-serif;
+        margin: 4vh auto 2vh auto;
+    }
+    #editUserIcon {
+        margin: 2vh auto 2vh auto;
+        width: 10%;
+        border-radius: 50%;
+    }
+    .editUserEditField {
+        display: flex;
+        margin: 2vh auto 2vh auto;
+        width: 50%;
+    }
+        .editUserEditField p {
+            margin: auto auto auto 15%;
+            font-size: large;
+            color: black;
+            font-weight: 500;
+            font-family: "M PLUS 2", sans-serif;
+        }
+        .editUserEditField input {
+            margin: auto 15% auto auto;
+            width: 50%;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-family: 'Montserrat', sans-serif;
+            padding: 1vh;
+            color: white;
+            background-color: #3D5A73;
+        }
+        .editUserEditField input::placeholder {
+            color: white;
+        }
+    #editUserDeleteButton {
+        display: flex;
+        margin: 2vh auto 2vh auto;
+        width: 15%;
+        height: 5vh;
+        background-color: #EB584E;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+        #editUserDeleteButton img { 
+            height: 2vh;
+            margin: auto 2.5% auto auto;
+        }
+        #editUserDeleteButton p {
+            color: white;
+            font-family: "Barlow", sans-serif;
+            font-size: medium;
+            margin: auto auto auto 2.5%;
+        }
+    #editUserButton {
+        display: flex;
+        margin: 4vh auto 2vh auto;
+        width: 20%;
+        height: 5vh;
+        background-color: #67D980;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+        #editUserButton img { 
+            height: 2vh;
+            margin: auto 2.5% auto auto;
+        }
+        #editUserButton p {
+            color: white;
+            font-family: "Barlow", sans-serif;
+            font-size: large;
+            margin: auto auto auto 2.5%;
+        }

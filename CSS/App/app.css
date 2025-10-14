@@ -45,13 +45,13 @@ body {
             .userMenuNavBar img {
                 height: 3vh;
                 margin: auto;
-            }
-            #userMenuNavBarLogoutIcon {
+                border-radius: 50%;
                 cursor: pointer;
             }
             .userMenuNavBar p {
                 margin: auto;
                 font-size: large;
+                cursor: pointer;
             }
     .main {
         width: 100%;

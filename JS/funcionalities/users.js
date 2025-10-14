@@ -25,11 +25,9 @@ const formLogin = document.getElementById("form-login")
 const formSignUp = document.getElementById("form-sign")
 
 // CHECK IF USER IS LOGUED
-if (localStorage.getItem("TDA_USER_LOGUED")) {
+if (user) {
     window.open('HTML/app.html', '_self')
 }
-
-// TODO: Delete and Update User
 
 // EVENT LISTENERS
 changeFormSignUp.addEventListener("click", () => {
@@ -84,5 +82,3 @@ async function signUp(username, email, password) {
         inputSignPassword.value = ""
     }
 }
-
-// EXPORTS

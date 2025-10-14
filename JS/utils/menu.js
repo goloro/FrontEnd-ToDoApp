@@ -1,4 +1,10 @@
 // CONSTANTS
+// Text
+const userMenuNavBarName = document.getElementById("userMenuNavBarName")
+
+// Images
+const userMenuNavBarUserIcon = document.getElementById("userMenuNavBarUserIcon")
+
 // Buttons
 const projectsBtn = document.getElementById("projectsNavBar")
 const workAreaBtn = document.getElementById("workAreaNavBar")
@@ -21,6 +27,7 @@ const workAreaContainer = document.getElementById("workAreaContainer")
 const workAreaSubContainer = document.getElementById("workAreaSubContainer")
 const newProjectContainer = document.getElementById("newProjectsContainer")
 const toDoListContainer = document.getElementById("toDoListContainer")
+const editUserContainer = document.getElementById("editUserContainer")
 
 // EVENT LISTENERS
 projectsBtn.addEventListener("click", e => {
@@ -43,6 +50,14 @@ noProjectsCreateProjectBtnWA.addEventListener("click", e => {
     hideAll()
     showNewProject()
 })
+userMenuNavBarName.addEventListener("click", e => {
+    hideAll()
+    showEditUser()
+})
+userMenuNavBarUserIcon.addEventListener("click", e => {
+    hideAll()
+    showEditUser()
+})
 logoutBtn.addEventListener("click", e => {
     localStorage.removeItem("TDA_USER_LOGUED")
     window.open('/FrontEnd-ToDoApp/index.html', '_self')
@@ -53,6 +68,7 @@ function hideAll () {
     projectsContainer.style.display = "none"
     workAreaContainer.style.display = "none"
     newProjectContainer.style.display = "none"
+    editUserContainer.style.display = "none"
 
     projectsBtn.style.fontWeight = "normal"
     workAreaBtn.style.fontWeight = "normal"
@@ -91,6 +107,8 @@ function showNewProject () {
     toDoListContainer.innerHTML = ""
     projectDocumentation.value = ""
 }
-
+function showEditUser () {
+    editUserContainer.style.display = "flex"
+}
 // EXPORTS
-export { hideAll, showProjects, showWorkArea, showNewProject }; 
+export { hideAll, showProjects, showWorkArea, showNewProject, showEditUser }; 

@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="../CSS/App/projectsView.css">
         <link rel="stylesheet" href="../CSS/App/workAreaView.css">
         <link rel="stylesheet" href="../CSS/App/newProjectView.css">
+        <link rel="stylesheet" href="../CSS/App/editUserView.css">
         <link rel="stylesheet" href="../CSS/App/notes.css">
 
         <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -147,6 +148,32 @@
                         <p>Create Project</p>
                     </div>
                 </div>
+
+                <!-- EDIT USER (DEFAULT: INVISIBLE) -->
+                <div class="containers" id="editUserContainer">
+                    <p id="editUserContainerTitle">User Information</p>
+                    <img id="editUserIcon" src="../Images/userIconDefault.png">
+                    <div class="editUserEditField" id="editUserName">
+                        <p>Name</p>
+                        <input id="editUserNameInput" type="text" maxlength="30" placeholder="Name">
+                    </div>
+                    <div class="editUserEditField" id="editUserEmail">
+                        <p>Email</p>
+                        <input id="editUserEmailInput" type="text" maxlength="30" placeholder="Email">
+                    </div>
+                    <div class="editUserEditField" id="editUserPassword">
+                        <p>Password</p>
+                        <input id="editUserPasswordInput" type="text" maxlength="30" placeholder="Password">
+                    </div>
+                    <div id="editUserDeleteButton">
+                        <img src="https://api.iconify.design/ant-design/delete-outlined.svg?color=white">
+                        <p>Delete User</p>
+                    </div>
+                    <div id="editUserButton">
+                        <img src="../Images/editIcon.png">
+                        <p>Edit User</p>
+                    </div>
+                </div>
             </div>
 
             <div class="mainNotes">
@@ -194,6 +221,7 @@
         <script src="../JS/utils/startBackend.js" type="module"></script>
         <script src="../JS/utils/checkLogin.js" type="module"></script>
         <script src="../JS/utils/menu.js" type="module"></script>
+        <script src="../JS/funcionalities/editUser.js" type="module"></script>
         <script src="../JS/funcionalities/notes.js" type="module"></script>
         <script src="../JS/funcionalities/projects.js" type="module"></script>
     </body>
