@@ -6,6 +6,9 @@ import { AlertsClass } from "../utils/alerts.js"
 // Service
 const UserService = new UserServiceClass()
 
+// User
+const user = JSON.parse(localStorage.getItem("TDA_USER_LOGUED"))
+
 // Text
 const inputLoginEmail = document.getElementById("inputLoginEmail")
 const inputLoginPassword = document.getElementById("inputLoginPassword")
