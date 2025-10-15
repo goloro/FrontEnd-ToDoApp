@@ -24,5 +24,8 @@ else {
 
         userNameText.textContent = request.userData.username
         userIcon.src = request.userData.icon
-    } else window.open('/FrontEnd-ToDoApp/index.html', '_self')
+    } else {
+        window.open('/FrontEnd-ToDoApp/index.html', '_self')
+        localStorage.removeItem("TDA_USER_LOGUED")
+    }
 }
