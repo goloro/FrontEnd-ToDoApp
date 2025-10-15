@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>ToDoApp</title> <!-- TODO: CHANGE BY THE AREA -->
+        <title>ToDoApp</title>
 
         <link rel="shortcut icon" href="../Images/ToDoApp.png">
 
         <link rel="stylesheet" href="../CSS/General/loader.css">
         <link rel="stylesheet" href="../CSS/General/alert.css">
+        <link rel="stylesheet" href="../CSS/General/mobileNoticeContainer.css">
         <link rel="stylesheet" href="../CSS/App/app.css">
         <link rel="stylesheet" href="../CSS/App/projectsView.css">
         <link rel="stylesheet" href="../CSS/App/workAreaView.css">
@@ -17,12 +18,13 @@
         <link rel="stylesheet" href="../CSS/App/editUserView.css">
         <link rel="stylesheet" href="../CSS/App/notes.css">
 
+        <link rel="stylesheet" href="../CSS/General/responsive.css">
+
         <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat&display=swap" rel="stylesheet">
-
     </head>
     <body>
         <div class="navBar">
@@ -216,6 +218,32 @@
         <div id="loading-Screen">
             <p>Loading<span id="loadingDots">...</span></p>
             <div id="loader"></div>
+        </div>
+
+        <div id="mobileNoticeContainer">    
+            <img id="mobileNoticeTitleImage" src="Images/ToDoAppCompleto.png"> 
+            <div id="mobileNoticeContent">
+                <div class="mobileNoticeText">
+                    <img src="Images/spanishFlag.png">
+                    <p>
+                        📱 Versión Móvil en Desarrollo 📱<br><br>
+                        Actualmente, la versión móvil de ToDoApp aún no está disponible. 
+                        Estamos trabajando para ofrecerte la mejor experiencia en todos los dispositivos.<br><br>
+                        <strong>Por favor, accede a la aplicación desde una laptop o computadora de escritorio para disfrutar de todas las funcionalidades.</strong><br><br>
+                        ¡Gracias por tu comprensión!
+                    </p>
+                </div>
+                <div class="mobileNoticeText">
+                    <img src="Images/greatbritainFlag.png">
+                    <p>
+                        📱 Mobile Version Under Development 📱<br><br>
+                        Currently, the mobile version of ToDoApp is not yet available. 
+                        We are working to provide you with the best experience across all devices.<br><br>
+                        <strong>Please access the application from a laptop or desktop computer to enjoy all features.</strong><br><br>
+                        Thank you for your understanding!
+                    </p>
+                </div>
+            </div>
         </div>
 
         <script src="../JS/utils/startBackend.js" type="module"></script>

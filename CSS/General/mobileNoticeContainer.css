@@ -1,5 +1,5 @@
 #mobileNoticeContainer {
-    display: flex;
+    display: none; /* Default: none | Optional: flex */
     flex-direction: column;
     margin: auto;
     position: fixed;
@@ -14,4 +14,31 @@
 }
     #mobileNoticeTitleImage {
         height: 10%;
+        margin: auto auto 1vh auto;
     }
+    #mobileNoticeContent {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 60vh;
+        margin: 1vh auto auto auto;
+    }
+        .mobileNoticeText {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            align-items: center;
+            height: 45%;
+            width: 100%;
+        }
+        .mobileNoticeText img {
+            width: 12%;
+            margin: auto auto 2vh auto;
+        }
+        .mobileNoticeText p {
+            margin: auto;
+            color: white;
+            text-align: justify;
+            font-size: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }

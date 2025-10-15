@@ -1,5 +1,5 @@
 #advertisementContainer {
-    display: flex; /* TODO: DELETE - Default flex */
+    display: flex; 
     position: fixed;
     width: 100%;
     height: 100vh;
