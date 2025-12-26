@@ -1,15 +1,19 @@
+// IMPORTS
+import { ConstantsClass } from '../constants.js'
+
 // CONSTANTS
-const MAIN_URL = "https://backend-todoapp-m30z.onrender.com"
+const Constants = new ConstantsClass()
+const MAIN_URL = Constants.BASE_URL
 
 // REQUEST HANDLER
 class RequestHandlerClass {
-    constructor() {}
+    constructor() { }
 
     // Get Default
     async getDefault(url) {
         const res = await fetch(MAIN_URL + url, {
-            method: 'GET', 
-            headers: {'Content-Type': 'application/json'}
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
         })
 
         return await res.json()
@@ -18,9 +22,9 @@ class RequestHandlerClass {
     // Post Default
     async postDefault(url, data) {
         const res = await fetch(MAIN_URL + url, {
-            method: 'POST', 
+            method: 'POST',
             body: JSON.stringify(data),
-            headers: {'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         })
         return await res.json()
     }
@@ -28,9 +32,9 @@ class RequestHandlerClass {
     // Put Default
     async putDefault(url, data) {
         const res = await fetch(MAIN_URL + url, {
-            method: 'PUT', 
+            method: 'PUT',
             body: JSON.stringify(data),
-            headers:{'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         })
         return await res.json()
     }
@@ -39,10 +43,10 @@ class RequestHandlerClass {
     async deleteDefault(url) {
         const res = await fetch(MAIN_URL + url, {
             method: 'DELETE',
-            headers:{'Content-Type': 'application/json'}
+            headers: { 'Content-Type': 'application/json' }
         })
         return await res.json()
     }
 }
 
-export {RequestHandlerClass}
+export { RequestHandlerClass }

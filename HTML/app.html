@@ -1,256 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>ToDoApp</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="../Images/ToDoApp.png">
+    <title>ToDoApp</title>
 
-        <link rel="stylesheet" href="../CSS/General/loader.css">
-        <link rel="stylesheet" href="../CSS/General/alert.css">
-        <link rel="stylesheet" href="../CSS/General/mobileNoticeContainer.css">
-        <link rel="stylesheet" href="../CSS/App/app.css">
-        <link rel="stylesheet" href="../CSS/App/projectsView.css">
-        <link rel="stylesheet" href="../CSS/App/workAreaView.css">
-        <link rel="stylesheet" href="../CSS/App/newProjectView.css">
-        <link rel="stylesheet" href="../CSS/App/editUserView.css">
-        <link rel="stylesheet" href="../CSS/App/notes.css">
+    <link rel="shortcut icon" href="../Images/ToDoApp.png">
 
-        <link rel="stylesheet" href="../CSS/General/responsive.css">
+    <link rel="stylesheet" href="../CSS/General/loader.css">
+    <link rel="stylesheet" href="../CSS/General/alert.css">
+    <link rel="stylesheet" href="../CSS/General/mobileNoticeContainer.css">
+    <link rel="stylesheet" href="../CSS/App/app.css">
+    <link rel="stylesheet" href="../CSS/App/projectsView.css">
+    <link rel="stylesheet" href="../CSS/App/workAreaView.css">
+    <link rel="stylesheet" href="../CSS/App/newProjectView.css">
+    <link rel="stylesheet" href="../CSS/App/editUserView.css">
+    <link rel="stylesheet" href="../CSS/App/notes.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="navBar">
-            <img id="logoNavBar" src="../Images/ToDoAppCompleto.png">
+    <link rel="stylesheet" href="../CSS/General/responsive.css">
 
-            <div class="menuNavBar">
-                <p id="projectsNavBar">Projects</p>
-                <p id="workAreaNavBar">Work Area</p>
-                <p id="newProjectNavBar">New Project</p>
-            </div>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat&display=swap"
+        rel="stylesheet">
+</head>
 
-            <div class="userMenuNavBar">
-                <img id="userMenuNavBarLogoutIcon" src="https://api.iconify.design/uil/sign-out-alt.svg?color=white">
-                <p id="userMenuNavBarName">User</p> <!-- TODO: CHANGES BY THE USER NAME -->
-                <img id="userMenuNavBarUserIcon" src="https://api.iconify.design/bxs/user-circle.svg?color=white">
-            </div>
+<body>
+    <div class="navBar">
+        <img id="logoNavBar" src="../Images/ToDoAppCompleto.png" alt="ToDoApp Logo">
+
+        <div class="menuNavBar">
+            <p id="projectsNavBar">Projects</p>
+            <p id="workAreaNavBar">Work Area</p>
+            <p id="newProjectNavBar">New Project</p>
         </div>
 
-        <div class="main">
-            <div class="mainProjects">
-                <!-- PROJECTS -->
-                <div class="containers" id="projectsContainer"> <!-- CHANGE BY PROJECTS -->
-                    <p id="noProjectsTextProjects">You don't have projects, go to <span class="noProjectsCreateProjectSpan" id="noProjectsCreateProjectSpan-PR">create one</span>!</p>
-                    <div id="projectsSubContainer"> 
-                        <!-- EXAMPLE
+        <div class="userMenuNavBar">
+            <img id="userMenuNavBarLogoutIcon" src="https://api.iconify.design/uil/sign-out-alt.svg?color=white"
+                alt="Logout Icon">
+            <p id="userMenuNavBarName">User</p> <!-- TODO: CHANGES BY THE USER NAME -->
+            <img id="userMenuNavBarUserIcon" src="https://api.iconify.design/bxs/user-circle.svg?color=white"
+                alt="User Icon">
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="mainProjects">
+            <!-- PROJECTS -->
+            <div class="containers" id="projectsContainer"> <!-- CHANGE BY PROJECTS -->
+                <p id="noProjectsTextProjects">You don't have projects, go to <span class="noProjectsCreateProjectSpan"
+                        id="noProjectsCreateProjectSpan-PR">create one</span>!</p>
+                <div id="projectsSubContainer">
+                    <!-- EXAMPLE
                             <div class="project">
                                 <p class="projectTitle">Esto es un proyecto</p>
                             </div>
                         -->
-                    </div>
                 </div>
+            </div>
 
-                <!-- WORK AREA (DEFAULT: INVISIBLE) -->
-                <div class="containers" id="workAreaContainer">
-                    <p id="noProjectsTextWorkArea">You don't have projects, go to <span class="noProjectsCreateProjectSpan" id="noProjectsCreateProjectSpan-WA">create one</span>!</p>
-                    <div id="workAreaSubContainer">
-                        <div class="workAreaTop" id="workAreaTop">
-                            <svg id="workAreaTopReturnButton" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="m13 8l-7 6l7 7"/><path d="M6 14h22.994c6.883 0 12.728 5.62 12.996 12.5c.284 7.27-5.723 13.5-12.996 13.5H11.998"/></g></svg>
+            <!-- WORK AREA (DEFAULT: INVISIBLE) -->
+            <div class="containers" id="workAreaContainer">
+                <p id="noProjectsTextWorkArea">You don't have projects, go to <span class="noProjectsCreateProjectSpan"
+                        id="noProjectsCreateProjectSpan-WA">create one</span>!</p>
+                <div id="workAreaSubContainer">
+                    <div class="workAreaTop" id="workAreaTop">
+                        <svg id="workAreaTopReturnButton" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            viewBox="0 0 48 48">
+                            <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="4">
+                                <path d="m13 8l-7 6l7 7" />
+                                <path
+                                    d="M6 14h22.994c6.883 0 12.728 5.62 12.996 12.5c.284 7.27-5.723 13.5-12.996 13.5H11.998" />
+                            </g>
+                        </svg>
 
-                            <p class="workAreaTopProjectTitle" id="workAreaTopProjectTitle">Project Title</p>
+                        <p class="workAreaTopProjectTitle" id="workAreaTopProjectTitle">Project Title</p>
 
-                            <div id="workAreaTopDeleteDiv">
-                                <svg id="workAreaTopDeleteButton" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 12 12"><path fill="white" d="M5 3h2a1 1 0 0 0-2 0M4 3a2 2 0 1 1 4 0h2.5a.5.5 0 0 1 0 1h-.441l-.443 5.17A2 2 0 0 1 7.623 11H4.377a2 2 0 0 1-1.993-1.83L1.941 4H1.5a.5.5 0 0 1 0-1zm3.5 3a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0zM5 5.5a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0V6a.5.5 0 0 0-.5-.5"/></svg>
-                                <p>Delete Project</p>
+                        <div id="workAreaTopDeleteDiv">
+                            <svg id="workAreaTopDeleteButton" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 12 12">
+                                <path fill="white"
+                                    d="M5 3h2a1 1 0 0 0-2 0M4 3a2 2 0 1 1 4 0h2.5a.5.5 0 0 1 0 1h-.441l-.443 5.17A2 2 0 0 1 7.623 11H4.377a2 2 0 0 1-1.993-1.83L1.941 4H1.5a.5.5 0 0 1 0-1zm3.5 3a.5.5 0 0 0-1 0v2a.5.5 0 0 0 1 0zM5 5.5a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 1 0V6a.5.5 0 0 0-.5-.5" />
+                            </svg>
+                            <p>Delete Project</p>
+                        </div>
+                    </div>
+
+                    <div class="workAreaPercentaje">
+                        <div class="workAreaPercentajeSubDiv">
+                            <p id="percentajeProject">0%</p>
+
+                            <div class="percentajeTotal">
+                                <div id="percentajeVariable"></div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="workAreaPercentaje">
-                            <div class="workAreaPercentajeSubDiv">
-                                <p id="percentajeProject">0%</p>
-
-                                <div class="percentajeTotal">
-                                    <div id="percentajeVariable"></div>
-                                </div>
+                    <div class="workAreaToDoList">
+                        <div class="toDoListTop">
+                            <p class="projectTitles">To Do List</p>
+                            <div class="addTaskDiv" id="addTaskDiv">
+                                <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white"
+                                    alt="Add Task Icon">
+                                <p>Add Task</p>
                             </div>
                         </div>
-
-                        <div class="workAreaToDoList">
-                            <div class="toDoListTop">
-                                <p class="projectTitles">To Do List</p>
-                                <div class="addTaskDiv" id="addTaskDiv">
-                                    <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white">
-                                    <p>Add Task</p>
-                                </div>
-                            </div>
-                            <div class="toDoListContainer" id="toDoListContainer">
-                                <!-- EXAMPLE 
+                        <div class="toDoListContainer" id="toDoListContainer">
+                            <!-- EXAMPLE 
                                     <div class="toDoTask" id="toDoTask-${numTasks}">
                                         <img id="chekSVGTask-${numTasks}" src="../Images/checkbox-unchecked.png">
                                         <input class="task" id="task-${numTasks}" maxlength="40" placeholder="This is a task"></input>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#f25050" d="M7.378 5.531a2.75 2.75 0 0 1 1.92-.781h10.297c.598 0 1.294.166 1.863.519c.579.358 1.11.974 1.11 1.856v9.75c0 .882-.531 1.497-1.11 1.856a3.65 3.65 0 0 1-1.863.519H9.298a2.75 2.75 0 0 1-1.92-.781l-5.35-5.216a1.75 1.75 0 0 1 0-2.506zM14.03 9.47a.75.75 0 1 0-1.06 1.06L14.44 12l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47l1.47 1.47a.75.75 0 1 0 1.06-1.06L16.56 12l1.47-1.47a.75.75 0 1 0-1.06-1.06l-1.47 1.47z"/></svg>
                                     </div>
                                 -->
-                                <!-- PNG TASK MARKED
+                            <!-- PNG TASK MARKED
                                    <img id="chekSVGTask-${numTasks}" src="../Images/checkbox-checked.png">
                                 -->
-                            </div>
                         </div>
+                    </div>
 
-                        <div class="workAreaDescription">
-                            <p class="projectTitles">Documentation</p>
-                            <textarea class="documentation" id="documentation" placeholder="Write your documentation here..."></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- NEW PROJECT (DEFAULT: INVISIBLE) -->
-                <div class="containers" id="newProjectsContainer">
-                    <p id="newProjectsContainerTitle">Create New Project</p>
-                    <div class="newProjectTitle">
-                        <p>Title</p>
-                        <input id="newProjectTitleInput" type="text" maxlength="30" placeholder="Project Title">
-                    </div>
-                    <div class="newProjectColors">
-                        <div class="newProjectColorsSubDiv" id="newProjectBackgroundOptions">
-                            <p>Background</p>
-                            <div class="newProjectColorsSubSubDiv" id="newProjectBackgroundOptionsSubDiv">
-                                <div class="newProjectColorsSelector">
-                                    <input id="newProjectColorSelectorBackgroundInputPicker1" type="color" class="colorPicker" name="colorPicker" value="#a4dfef">
-                                    <input id="newProjectColorSelectorBackgroundInputText1" type="text" class="colorHex" name="colorHex" maxlength="7" placeholder="#a4dfef">
-                                </div>
-                                <div class="newProjectColorsSelector">
-                                    <input id="newProjectColorSelectorBackgroundInputPicker2" type="color" class="colorPicker" name="colorPicker" value="#00c6fb">
-                                    <input id="newProjectColorSelectorBackgroundInputText2" type="text" class="colorHex" name="colorHex" maxlength="7" placeholder="#00c6fb">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="newProjectColorsSubDiv" id="newProjectTextColorSelect">
-                            <p>Text</p>
-                            <div class="newProjectColorsSubSubDiv" id="newProjectTextColorSelectSubDiv">
-                                <div class="newProjectColorsSelector">
-                                    <input id="newProjectColorSelectorTextInputPicker" type="color" class="colorPicker" name="colorPicker" value="#000000">
-                                    <input id="newProjectColorSelectorTextInputText"type="text" class="colorHex" name="colorHex" maxlength="7" placeholder="#000000">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="newProjectPreview" id="newProjectPreview">
-                        <p id="newProjectPreviewText">Project Title</p>
-                    </div>
-                    <div id="createNewProjectButton">
-                        <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white">
-                        <p>Create Project</p>
-                    </div>
-                </div>
-
-                <!-- EDIT USER (DEFAULT: INVISIBLE) -->
-                <div class="containers" id="editUserContainer">
-                    <p id="editUserContainerTitle">User Information</p>
-                    <img id="editUserIcon" src="../Images/userIconDefault.png">
-                    <div class="editUserEditField" id="editUserName">
-                        <p>Name</p>
-                        <input id="editUserNameInput" type="text" maxlength="15" placeholder="Name">
-                    </div>
-                    <div class="editUserEditField" id="editUserEmail">
-                        <p>Email</p>
-                        <input id="editUserEmailInput" type="text"  placeholder="Email">
-                    </div>
-                    <div class="editUserEditField" id="editUserPassword">
-                        <p>Password</p>
-                        <input id="editUserPasswordInput" type="password" maxlength="50" placeholder="Password">
-                    </div>
-                    <div id="editUserDeleteButton">
-                        <img src="https://api.iconify.design/ant-design/delete-outlined.svg?color=white">
-                        <p>Delete User</p>
-                    </div>
-                    <div id="editUserButton">
-                        <img src="../Images/editIcon.png">
-                        <p>Edit User</p>
+                    <div class="workAreaDescription">
+                        <p class="projectTitles">Documentation</p>
+                        <textarea class="documentation" id="documentation"
+                            placeholder="Write your documentation here..."></textarea>
                     </div>
                 </div>
             </div>
 
-            <div class="mainNotes">
-                <p class="notesTitle">NOTES</p>
+            <!-- NEW PROJECT (DEFAULT: INVISIBLE) -->
+            <div class="containers" id="newProjectsContainer">
+                <p id="newProjectsContainerTitle">Create New Project</p>
+                <div class="newProjectTitle">
+                    <p>Title</p>
+                    <input id="newProjectTitleInput" type="text" maxlength="30" placeholder="Project Title">
+                </div>
+                <div class="newProjectColors">
+                    <div class="newProjectColorsSubDiv" id="newProjectBackgroundOptions">
+                        <p>Background</p>
+                        <div class="newProjectColorsSubSubDiv" id="newProjectBackgroundOptionsSubDiv">
+                            <div class="newProjectColorsSelector">
+                                <input id="newProjectColorSelectorBackgroundInputPicker1" type="color"
+                                    class="colorPicker" name="colorPicker" value="#a4dfef">
+                                <input id="newProjectColorSelectorBackgroundInputText1" type="text" class="colorHex"
+                                    name="colorHex" maxlength="7" placeholder="#a4dfef">
+                            </div>
+                            <div class="newProjectColorsSelector">
+                                <input id="newProjectColorSelectorBackgroundInputPicker2" type="color"
+                                    class="colorPicker" name="colorPicker" value="#00c6fb">
+                                <input id="newProjectColorSelectorBackgroundInputText2" type="text" class="colorHex"
+                                    name="colorHex" maxlength="7" placeholder="#00c6fb">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newProjectColorsSubDiv" id="newProjectTextColorSelect">
+                        <p>Text</p>
+                        <div class="newProjectColorsSubSubDiv" id="newProjectTextColorSelectSubDiv">
+                            <div class="newProjectColorsSelector">
+                                <input id="newProjectColorSelectorTextInputPicker" type="color" class="colorPicker"
+                                    name="colorPicker" value="#000000">
+                                <input id="newProjectColorSelectorTextInputText" type="text" class="colorHex"
+                                    name="colorHex" maxlength="7" placeholder="#000000">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="newProjectPreview" id="newProjectPreview">
+                    <p id="newProjectPreviewText">Project Title</p>
+                </div>
+                <div id="createNewProjectButton">
+                    <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white"
+                        alt="Add Project Icon">
+                    <p>Create Project</p>
+                </div>
+            </div>
 
-                <div class="containers" id="notesContainer"> <!-- CHANGE BY NOTES -->
-                    <p id="noNotesText">You don't have any notes yet!</p>
-                    <div id="notesSubContainer">
-                        <!-- EXAMPLE
+            <!-- EDIT USER (DEFAULT: INVISIBLE) -->
+            <div class="containers" id="editUserContainer">
+                <p id="editUserContainerTitle">User Information</p>
+                <img id="editUserIcon" src="../Images/userIconDefault.png" alt="User Avatar">
+                <div class="editUserEditField" id="editUserName">
+                    <p>Name</p>
+                    <input id="editUserNameInput" type="text" maxlength="15" placeholder="Name">
+                </div>
+                <div class="editUserEditField" id="editUserEmail">
+                    <p>Email</p>
+                    <input id="editUserEmailInput" type="text" placeholder="Email">
+                </div>
+                <div class="editUserEditField" id="editUserPassword">
+                    <p>Password</p>
+                    <input id="editUserPasswordInput" type="password" maxlength="50" placeholder="Password">
+                </div>
+                <div id="editUserDeleteButton">
+                    <img src="https://api.iconify.design/ant-design/delete-outlined.svg?color=white" alt="Delete Icon">
+                    <p>Delete User</p>
+                </div>
+                <div id="editUserButton">
+                    <img src="../Images/editIcon.png" alt="Edit Icon">
+                    <p>Edit User</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainNotes">
+            <p class="notesTitle">NOTES</p>
+
+            <div class="containers" id="notesContainer"> <!-- CHANGE BY NOTES -->
+                <p id="noNotesText">You don't have any notes yet!</p>
+                <div id="notesSubContainer">
+                    <!-- EXAMPLE
                             <div class="note" id="note">
                                 <textarea class="noteText" id="noteText" placeholder="Esto es una nota"></textarea>
                             </div>
                         -->
-                    </div>
-                </div>
-
-                <div class="createNote">
-                    <div class="createNoteButton" id="createNoteButton">
-                        <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white">
-                        <p>New Note</p>
-                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="footer">
-            <div>
-                <img src="..//Images/logo_glr_white.png">
-                <p>Developed by <span>goloro</span></p>
-            </div>
-        </div>
-
-        <div id="alertBox">
-            <div id="alertBoxSubDiv">
-                <img id="alertBoxIcon" src="https://api.iconify.design/fluent/alert-12-regular.svg?color=white">
-                <p id="alertBoxText">Alert</p>
-            </div>
-        </div>
-
-        <div id="loading-Screen">
-            <p>Loading<span id="loadingDots">...</span></p>
-            <div id="loader"></div>
-        </div>
-
-        <div id="mobileNoticeContainer">    
-            <img id="mobileNoticeTitleImage" src="../Images/ToDoAppCompleto.png"> 
-            <div id="mobileNoticeContent">
-                <div class="mobileNoticeText">
-                    <img src="../Images/spanishFlag.png">
-                    <p>
-                        📱 Versión Móvil en Desarrollo 📱<br><br>
-                        Actualmente, la versión móvil de ToDoApp aún no está disponible. 
-                        Estamos trabajando para ofrecerte la mejor experiencia en todos los dispositivos.<br><br>
-                        <strong>Por favor, accede a la aplicación desde una laptop o computadora de escritorio para disfrutar de todas las funcionalidades.</strong><br><br>
-                        ¡Gracias por tu comprensión!
-                    </p>
-                </div>
-                <div class="mobileNoticeText">
-                    <img src="../Images/greatbritainFlag.png">
-                    <p>
-                        📱 Mobile Version Under Development 📱<br><br>
-                        Currently, the mobile version of ToDoApp is not yet available. 
-                        We are working to provide you with the best experience across all devices.<br><br>
-                        <strong>Please access the application from a laptop or desktop computer to enjoy all features.</strong><br><br>
-                        Thank you for your understanding!
-                    </p>
+            <div class="createNote">
+                <div class="createNoteButton" id="createNoteButton">
+                    <img src="https://api.iconify.design/ant-design/plus-circle-outlined.svg?color=white"
+                        alt="New Note Icon">
+                    <p>New Note</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="../JS/utils/startBackend.js" type="module"></script>
-        <script src="../JS/utils/checkLogin.js" type="module"></script>
-        <script src="../JS/utils/menu.js" type="module"></script>
-        <script src="../JS/funcionalities/editUser.js" type="module"></script>
-        <script src="../JS/funcionalities/notes.js" type="module"></script>
-        <script src="../JS/funcionalities/projects.js" type="module"></script>
-    </body>
+    <div class="footer">
+        <div>
+            <img src="../Images/logo_glr_white.png" alt="Goloro Logo">
+            <p>Developed by <span>goloro</span></p>
+        </div>
+    </div>
+
+    <div id="alertBox">
+        <div id="alertBoxSubDiv">
+            <img id="alertBoxIcon" src="https://api.iconify.design/fluent/alert-12-regular.svg?color=white"
+                alt="Alert Icon">
+            <p id="alertBoxText">Alert</p>
+        </div>
+    </div>
+
+    <div id="loading-Screen">
+        <p>Loading<span id="loadingDots">...</span></p>
+        <div id="loader"></div>
+    </div>
+
+    <div id="mobileNoticeContainer">
+        <img id="mobileNoticeTitleImage" src="../Images/ToDoAppCompleto.png" alt="ToDoApp Logo">
+        <div id="mobileNoticeContent">
+            <div class="mobileNoticeText">
+                <img src="../Images/spanishFlag.png" alt="Spanish Flag">
+                <p>
+                    📱 Versión Móvil en Desarrollo 📱<br><br>
+                    Actualmente, la versión móvil de ToDoApp aún no está disponible.
+                    Estamos trabajando para ofrecerte la mejor experiencia en todos los dispositivos.<br><br>
+                    <strong>Por favor, accede a la aplicación desde una laptop o computadora de escritorio para
+                        disfrutar de todas las funcionalidades.</strong><br><br>
+                    ¡Gracias por tu comprensión!
+                </p>
+            </div>
+            <div class="mobileNoticeText">
+                <img src="../Images/greatbritainFlag.png" alt="UK Flag">
+                <p>
+                    📱 Mobile Version Under Development 📱<br><br>
+                    Currently, the mobile version of ToDoApp is not yet available.
+                    We are working to provide you with the best experience across all devices.<br><br>
+                    <strong>Please access the application from a laptop or desktop computer to enjoy all
+                        features.</strong><br><br>
+                    Thank you for your understanding!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/utils/startBackend.js" type="module"></script>
+    <script src="../JS/utils/checkLogin.js" type="module"></script>
+    <script src="../JS/utils/menu.js" type="module"></script>
+    <script src="../JS/funcionalities/editUser.js" type="module"></script>
+    <script src="../JS/funcionalities/notes.js" type="module"></script>
+    <script src="../JS/funcionalities/projects.js" type="module"></script>
+</body>
+
 </html>

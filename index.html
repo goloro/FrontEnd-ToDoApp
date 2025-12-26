@@ -1,152 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>ToDoApp</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="shortcut icon" href="Images/ToDoApp.png">
+    <title>ToDoApp</title>
 
-        <link rel="stylesheet" href="CSS/index.css">
-        <link rel="stylesheet" href="CSS/General/alert.css">
-        <link rel="stylesheet" href="CSS/General/loader.css">
-        <link rel="stylesheet" href="CSS/General/advertisement.css">
-        <link rel="stylesheet" href="CSS/General/mobileNoticeContainer.css">
+    <link rel="shortcut icon" href="Images/ToDoApp.png">
 
-        <link rel="stylesheet" href="CSS/General/responsive.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/General/alert.css">
+    <link rel="stylesheet" href="CSS/General/loader.css">
+    <link rel="stylesheet" href="CSS/General/advertisement.css">
+    <link rel="stylesheet" href="CSS/General/mobileNoticeContainer.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Red+Hat+Display&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="main">
-            <img id="logoTDA" src="Images/ToDoAppCompleto.png">
-        </div>
+    <link rel="stylesheet" href="CSS/General/responsive.css">
 
-        <div class="login-sign">
-            <div class="form-container" id="form-container">
-                <form class="form-users" id="form-login">
-                    <div class="form-subDiv">
-                        <img src="https://api.iconify.design/fluent/mail-16-regular.svg?color=%23222">
-                        <input id="inputLoginEmail" type="text" placeholder="Mail">
-                    </div>
-                    <div class="form-subDiv">
-                        <img src="https://api.iconify.design/akar-icons/lock-off.svg?color=%23222">
-                        <input id="inputLoginPassword" type="password" maxlength="50" placeholder="Password">
-                    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Red+Hat+Display&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Montserrat&display=swap"
+        rel="stylesheet">
+</head>
 
-                    <div class="button-form" id="button-login">
-                        <p>SIGN IN</p>
-                    </div>
+<body>
+    <div class="main">
+        <img id="logoTDA" src="Images/ToDoAppCompleto.png" alt="ToDoApp Logo">
+    </div>
 
-                    <p class="form-users-p" id="signUpTxt">DON'T HAVE AN ACOUNT? <span id="change-signUp">SIGN UP</span></p>
-                </form>
-
-                <form class="form-users" id="form-sign"> <!-- TODO: INVISIBLE -->
-                    <div class="form-subDiv">
-                        <img src="https://api.iconify.design/carbon/user-avatar-filled-alt.svg?color=%23222">
-                        <input id="inputSignUsername" type="text" maxlength="15" placeholder="Username">
-                    </div>
-                    <div class="form-subDiv">
-                        <img src="https://api.iconify.design/fluent/mail-16-regular.svg?color=%23222">
-                        <input id="inputSignEmail" type="text" placeholder="Mail">
-                    </div>
-                    <div class="form-subDiv">
-                        <img src="https://api.iconify.design/akar-icons/lock-off.svg?color=%23222">
-                        <input id="inputSignPassword" type="password" maxlength="50" placeholder="Password">
-                    </div>
-
-                    <div class="button-form" id="button-sign">
-                        <p>SIGN UP</p>
-                    </div>
-
-                    <p class="form-users-p" id="signUpTxt">DO YOU ALREADY HAVE AN ACCOUNT? <span id="change-login">LOG IN</span></p>
-                </form>
-            </div>
-        </div>
-
-        <div id="alertBox">
-            <div id="alertBoxSubDiv">
-                <img id="alertBoxIcon" src="https://api.iconify.design/fluent/alert-12-regular.svg?color=white">
-                <p id="alertBoxText">Alert</p>
-            </div>
-        </div>
-
-        <div id="advertisementContainer">
-            <div id="advertisement">
-                <div id="advertisementTitle">
-                    <img src="Images/icon-danger.png">
-                    <p>IMPORTANT</p>
+    <div class="login-sign">
+        <div class="form-container" id="form-container">
+            <form class="form-users" id="form-login">
+                <div class="form-subDiv">
+                    <img src="https://api.iconify.design/fluent/mail-16-regular.svg?color=%23222" alt="Email Icon">
+                    <input id="inputLoginEmail" type="text" placeholder="Mail">
                 </div>
-                <div id="advertisementTexts">
-                    <div class="advertisementText" id="advertisementTextSpanish">
-                        <img src="Images/spanishFlag.png">
-                        <p>
-                            ⚠️ Web de Desarrollo no Securizado ⚠️<br>
-                            Al continuar, usted reconoce y acepta que este sitio web actualmente no está asegurado y es únicamente para fines de desarrollo o prueba. 
-                            NO ingrese datos personales, contraseñas o información financiera reales. Usted utiliza esta plataforma completamente bajo su propio riesgo. 
-                            No nos hacemos responsables de ninguna consecuencia, pérdida o daño resultante del uso de datos reales en esta plataforma.
-                        </p>
-                    </div>
-                    <div class="advertisementText" id="advertisementTextEnglish">
-                        <img src="Images/greatbritainFlag.png">
-                        <p>
-                            ⚠️ Unsecured Development Site ⚠️<br>
-                            By proceeding, you acknowledge and accept that this website is currently not secured and is for development or testing purposes only. 
-                            DO NOT enter any real personal data, passwords, or financial information. You use this platform entirely at your own risk. 
-                            We are not responsible for any consequences, losses, or damages resulting from the use of real data on this platform.
-                        </p>
-                    </div>
+                <div class="form-subDiv">
+                    <img src="https://api.iconify.design/akar-icons/lock-off.svg?color=%23222" alt="Password Icon">
+                    <input id="inputLoginPassword" type="password" maxlength="50" placeholder="Password">
                 </div>
-                <div id="acceptAdvertisementText">
-                    <img id="acceptAdvertisementCheckbox" src="Images/checkbox-unchecked.png">
+
+                <div class="button-form" id="button-login">
+                    <p>SIGN IN</p>
+                </div>
+
+                <p class="form-users-p" id="signUpTxt">DON'T HAVE AN ACOUNT? <span id="change-signUp">SIGN UP</span></p>
+            </form>
+
+            <form class="form-users" id="form-sign"> <!-- TODO: INVISIBLE -->
+                <div class="form-subDiv">
+                    <img src="https://api.iconify.design/carbon/user-avatar-filled-alt.svg?color=%23222"
+                        alt="User Icon">
+                    <input id="inputSignUsername" type="text" maxlength="15" placeholder="Username">
+                </div>
+                <div class="form-subDiv">
+                    <img src="https://api.iconify.design/fluent/mail-16-regular.svg?color=%23222" alt="Email Icon">
+                    <input id="inputSignEmail" type="text" placeholder="Mail">
+                </div>
+                <div class="form-subDiv">
+                    <img src="https://api.iconify.design/akar-icons/lock-off.svg?color=%23222" alt="Password Icon">
+                    <input id="inputSignPassword" type="password" maxlength="50" placeholder="Password">
+                </div>
+
+                <div class="button-form" id="button-sign">
+                    <p>SIGN UP</p>
+                </div>
+
+                <p class="form-users-p" id="signUpTxt">DO YOU ALREADY HAVE AN ACCOUNT? <span id="change-login">LOG
+                        IN</span></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="alertBox">
+        <div id="alertBoxSubDiv">
+            <img id="alertBoxIcon" src="https://api.iconify.design/fluent/alert-12-regular.svg?color=white"
+                alt="Alert Icon">
+            <p id="alertBoxText">Alert</p>
+        </div>
+    </div>
+
+    <div id="advertisementContainer">
+        <div id="advertisement">
+            <div id="advertisementTitle">
+                <img src="Images/icon-danger.png" alt="Danger Icon">
+                <p>IMPORTANT</p>
+            </div>
+            <div id="advertisementTexts">
+                <div class="advertisementText" id="advertisementTextSpanish">
+                    <img src="Images/spanishFlag.png" alt="Spanish Flag">
                     <p>
-                        Acepto que he leído y entendido el aviso de seguridad.
-                        <br>
-                        I acknowledge that I have read and understood the security notice.
+                        ⚠️ Web de Desarrollo no Securizado ⚠️<br>
+                        Al continuar, usted reconoce y acepta que este sitio web actualmente no está asegurado y es
+                        únicamente para fines de desarrollo o prueba.
+                        NO ingrese datos personales, contraseñas o información financiera reales. Usted utiliza esta
+                        plataforma completamente bajo su propio riesgo.
+                        No nos hacemos responsables de ninguna consecuencia, pérdida o daño resultante del uso de datos
+                        reales en esta plataforma.
                     </p>
                 </div>
-                <div id="acceptAdvertisementBtn">
-                    <p>Accept</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="loading-Screen">
-            <p>Loading<span id="loadingDots">...</span></p>
-            <div id="loader"></div>
-        </div>
-
-        <div id="mobileNoticeContainer">    
-            <img id="mobileNoticeTitleImage" src="Images/ToDoAppCompleto.png"> 
-            <div id="mobileNoticeContent">
-                <div class="mobileNoticeText">
-                    <img src="Images/spanishFlag.png">
+                <div class="advertisementText" id="advertisementTextEnglish">
+                    <img src="Images/greatbritainFlag.png" alt="UK Flag">
                     <p>
-                        📱 Versión Móvil en Desarrollo 📱<br><br>
-                        Actualmente, la versión móvil de ToDoApp aún no está disponible. 
-                        Estamos trabajando para ofrecerte la mejor experiencia en todos los dispositivos.<br><br>
-                        <strong>Por favor, accede a la aplicación desde una laptop o computadora de escritorio para disfrutar de todas las funcionalidades.</strong><br><br>
-                        ¡Gracias por tu comprensión!
-                    </p>
-                </div>
-                <div class="mobileNoticeText">
-                    <img src="Images/greatbritainFlag.png">
-                    <p>
-                        📱 Mobile Version Under Development 📱<br><br>
-                        Currently, the mobile version of ToDoApp is not yet available. 
-                        We are working to provide you with the best experience across all devices.<br><br>
-                        <strong>Please access the application from a laptop or desktop computer to enjoy all features.</strong><br><br>
-                        Thank you for your understanding!
+                        ⚠️ Unsecured Development Site ⚠️<br>
+                        By proceeding, you acknowledge and accept that this website is currently not secured and is for
+                        development or testing purposes only.
+                        DO NOT enter any real personal data, passwords, or financial information. You use this platform
+                        entirely at your own risk.
+                        We are not responsible for any consequences, losses, or damages resulting from the use of real
+                        data on this platform.
                     </p>
                 </div>
             </div>
+            <div id="acceptAdvertisementText">
+                <img id="acceptAdvertisementCheckbox" src="Images/checkbox-unchecked.png" alt="Checkbox">
+                <p>
+                    Acepto que he leído y entendido el aviso de seguridad.
+                    <br>
+                    I acknowledge that I have read and understood the security notice.
+                </p>
+            </div>
+            <div id="acceptAdvertisementBtn">
+                <p>Accept</p>
+            </div>
         </div>
+    </div>
 
-        <script src="JS/utils/advertisement.js" type="module"></script>
-        <script src="JS/utils/startBackend.js" type="module"></script>
-        <script src="JS/funcionalities/users.js" type="module"></script>
-    </body>
+    <div id="loading-Screen">
+        <p>Loading<span id="loadingDots">...</span></p>
+        <div id="loader"></div>
+    </div>
+
+    <div id="mobileNoticeContainer">
+        <img id="mobileNoticeTitleImage" src="Images/ToDoAppCompleto.png" alt="ToDoApp Logo">
+        <div id="mobileNoticeContent">
+            <div class="mobileNoticeText">
+                <img src="Images/spanishFlag.png" alt="Spanish Flag">
+                <p>
+                    📱 Versión Móvil en Desarrollo 📱<br><br>
+                    Actualmente, la versión móvil de ToDoApp aún no está disponible.
+                    Estamos trabajando para ofrecerte la mejor experiencia en todos los dispositivos.<br><br>
+                    <strong>Por favor, accede a la aplicación desde una laptop o computadora de escritorio para
+                        disfrutar de todas las funcionalidades.</strong><br><br>
+                    ¡Gracias por tu comprensión!
+                </p>
+            </div>
+            <div class="mobileNoticeText">
+                <img src="Images/greatbritainFlag.png" alt="UK Flag">
+                <p>
+                    📱 Mobile Version Under Development 📱<br><br>
+                    Currently, the mobile version of ToDoApp is not yet available.
+                    We are working to provide you with the best experience across all devices.<br><br>
+                    <strong>Please access the application from a laptop or desktop computer to enjoy all
+                        features.</strong><br><br>
+                    Thank you for your understanding!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/utils/advertisement.js" type="module"></script>
+    <script src="JS/utils/startBackend.js" type="module"></script>
+    <script src="JS/funcionalities/users.js" type="module"></script>
+</body>
+
 </html>

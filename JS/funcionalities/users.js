@@ -53,35 +53,52 @@ signBTN.addEventListener("click", (e) => {
 })
 
 // FUNCTIONS
-async function login(email, password) {
-    // TODO: check email with regex
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
 
-    const request = await UserService.login(email, password)
+async function handleAuthAction(actionType, data) {
+    const { email, password, username } = data;
+
+    if (!isValidEmail(email)) {
+        new AlertsClass("error", "Please enter a valid email address");
+        return;
+    }
+
+    let request;
+    if (actionType === 'login') {
+        request = await UserService.login(email, password);
+    } else {
+        request = await UserService.signUp({ username, email, password });
+    }
 
     if (request.successful) {
-        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
-
-        window.open('HTML/app.html', '_self')
+        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData));
+        window.open('HTML/app.html', '_self');
     } else {
-        new AlertsClass("error", "Username or email aren´t correct or not registered")
-        inputLoginEmail.value = ""
-        inputLoginPassword.value = ""
+        const errorMessage = actionType === 'login'
+            ? "Username or email aren´t correct or not registered"
+            : "Username or email are already registered";
+
+        new AlertsClass("error", errorMessage);
+
+        // Clear inputs
+        if (actionType === 'login') {
+            inputLoginEmail.value = "";
+            inputLoginPassword.value = "";
+        } else {
+            inputSignUsername.value = "";
+            inputSignEmail.value = "";
+            inputSignPassword.value = "";
+        }
     }
 }
 
+async function login(email, password) {
+    await handleAuthAction('login', { email, password });
+}
+
 async function signUp(username, email, password) {
-    // TODO: check email with regex
-
-    const request = await UserService.signUp({username: username, email: email, password: password})
-
-    if (request.successful) {
-        localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
-
-        window.open('HTML/app.html', '_self')
-    } else {
-        new AlertsClass("error", "Username or email are already registered")
-        inputSignUsername.value = ""
-        inputSignEmail.value = ""
-        inputSignPassword.value = ""
-    }
+    await handleAuthAction('signup', { username, email, password });
 }

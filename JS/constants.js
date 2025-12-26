@@ -1,8 +1,9 @@
 // CONSTANTS
 class ConstantsClass {
-    constructor() {}
+    constructor() { }
 
+    BASE_URL = "https://backend-todoapp-m30z.onrender.com"
     PROHIBITED_USERNAMES = ["puta", "fuck", "pene", "pito"]
 }
 
-export {ConstantsClass}
+export { ConstantsClass }
