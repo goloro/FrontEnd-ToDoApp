@@ -10,9 +10,11 @@ const UserService = new UserServiceClass()
 
 // Text 
 const userNameText = document.getElementById("userMenuNavBarName")
+const mobileUserNameText = document.getElementById("userMenuNavBarName-Mobile")
 
 // Images
 const userIcon = document.getElementById("userMenuNavBarUserIcon")
+const mobileUserIcon = document.getElementById("userMenuNavBarUserIcon-Mobile")
 
 // FUNCTIONALITY
 if (!logged_User) window.open('/FrontEnd-ToDoApp/index.html', '_self')
@@ -22,8 +24,12 @@ else {
     if (request.successful) {
         localStorage.setItem("TDA_USER_LOGUED", JSON.stringify(request.userData))
 
-        userNameText.textContent = request.userData.username
-        userIcon.src = request.userData.icon
+        if (userNameText) userNameText.textContent = request.userData.username
+        if (userIcon) userIcon.src = request.userData.icon
+
+        // Sync Mobile Clone
+        if (mobileUserNameText) mobileUserNameText.textContent = request.userData.username
+        if (mobileUserIcon) mobileUserIcon.src = request.userData.icon
     } else {
         window.open('/FrontEnd-ToDoApp/index.html', '_self')
         localStorage.removeItem("TDA_USER_LOGUED")

@@ -1,0 +1,65 @@
+/* Responsive Design for Work Area (Task List) */
+
+@media screen and (max-width: 768px) {
+    #workAreaContainer {
+        width: 100%;
+    }
+
+    /* Top Section */
+    .workAreaTop {
+        height: auto;
+        min-height: 20vh;
+        padding-bottom: 2vh;
+    }
+
+    .workAreaTopProjectTitle {
+        font-size: x-large;
+        text-align: center;
+        width: 80%;
+    }
+
+    #workAreaTopReturnButton {
+        margin: 2vh;
+    }
+
+    #workAreaTopDeleteDiv {
+        width: 40%;
+        margin: 2vh auto;
+    }
+
+    /* Percentage Bar */
+    .workAreaPercentajeSubDiv {
+        width: 90%;
+    }
+
+    /* To Do List */
+    .toDoListContainer {
+        display: flex !important;
+        flex-direction: column;
+        grid-template-columns: none !important;
+        height: auto;
+        min-height: 40vh;
+    }
+
+    .toDoTask {
+        width: 95%;
+        margin: 1vh auto;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.5vh;
+    }
+
+    .addTaskDiv {
+        width: 30%;
+        margin-right: 2vh;
+    }
+
+    /* Documentation */
+    .workAreaDescription {
+        height: auto;
+        padding-bottom: 5vh;
+    }
+
+    .documentation {
+        height: 20vh;
+    }
+}

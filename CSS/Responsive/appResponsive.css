@@ -1,0 +1,165 @@
+/* Responsive Design for App Layout */
+
+@media screen and (max-width: 1024px) {
+    /* Tablet adjustments can go here */
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+        /* Allow scrolling */
+        overflow-y: auto;
+    }
+
+    /* Navbar */
+    .navBar {
+        height: 8vh;
+        justify-content: space-between;
+        padding: 0 5%;
+        position: relative;
+        /* For absolute menu positioning */
+        align-items: center;
+    }
+
+    #logoNavBar {
+        height: 6vh;
+        margin: 0;
+    }
+
+    /* User Menu - Hide name, keep icon */
+    /* User Menu Inside Dropdown */
+    /* User Menu - Hide Original (Desktop) on Mobile */
+    .navBar>.userMenuNavBar {
+        display: none !important;
+    }
+
+    /* User Menu - Mobile Clone Styling */
+    #userMenuNavBar-Mobile {
+        display: flex !important;
+        width: 90%;
+        margin: 1vh auto 1vh auto;
+        /* Spacing from links */
+        border-radius: 10px;
+        /* Rounded pill shape */
+        justify-content: space-between;
+        /* Icons on edges, text center */
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 75%;
+    }
+
+    #userMenuNavBarName-Mobile {
+        color: white;
+        font-family: "Rubik", sans-serif;
+        font-size: 1.2rem;
+        width: 50%;
+    }
+
+    #userMenuNavBar-Mobile img {
+        height: 3.5vh;
+        cursor: pointer;
+    }
+
+    /* Hamburger Menu Icon */
+    #hamburgerMenu {
+        display: block !important;
+        cursor: pointer;
+    }
+
+    /* Dropdown Menu (Hidden by default) */
+    .menuNavBar {
+        display: none;
+        /* Hidden */
+        flex-direction: column;
+        position: absolute;
+        top: 8vh;
+        /* Below navbar */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 34, 51, 0.95);
+        /* Semi-transparent dark blue */
+        backdrop-filter: blur(10px);
+        /* Glassmorphism effect */
+        padding: 2vh 0;
+        z-index: 1000;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        gap: 2vh;
+        border-top: 1px solid #3d5a73;
+    }
+
+    /* Active State for Menu */
+    .menuNavBar.active {
+        display: flex !important;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    .menuNavBar p {
+        font-size: large;
+        margin: 0;
+        padding: 1vh 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menuNavBar p:last-child {
+        border-bottom: none;
+    }
+
+    /* Main Container - Stacking */
+    .main {
+        flex-direction: column;
+        height: auto;
+        /* Allow it to grow */
+        min-height: 92vh;
+        padding-bottom: 5vh;
+    }
+
+    .mainProjects {
+        width: 90%;
+        height: auto;
+        /* Allow content to dictate height */
+        min-height: 60vh;
+        margin: 0 auto 2vh auto;
+    }
+
+    .mainNotes {
+        width: 90%;
+        /* Show notes now */
+        height: auto;
+        min-height: 30vh;
+        margin: 0 auto;
+        display: flex !important;
+        /* Ensure it's visible */
+        flex-direction: column;
+    }
+
+    /* Adjust container heights inside main */
+    .containers {
+        height: auto;
+        min-height: 85vh;
+    }
+
+    /* Footer */
+    .footer {
+        display: none;
+        /* Keep hidden to save space, or show at very bottom if requested */
+    }
+
+    /* Animation */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

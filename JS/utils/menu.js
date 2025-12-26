@@ -29,6 +29,10 @@ const newProjectContainer = document.getElementById("newProjectsContainer")
 const toDoListContainer = document.getElementById("toDoListContainer")
 const editUserContainer = document.getElementById("editUserContainer")
 
+const mobileUserMenuName = document.getElementById("userMenuNavBarName-Mobile")
+const mobileUserMenuIcon = document.getElementById("userMenuNavBarUserIcon-Mobile")
+const mobileLogoutBtn = document.getElementById("userMenuNavBarLogoutIcon-Mobile")
+
 // EVENT LISTENERS
 projectsBtn.addEventListener("click", e => {
     hideAll()
@@ -58,13 +62,22 @@ userMenuNavBarUserIcon.addEventListener("click", e => {
     hideAll()
     showEditUser()
 })
+
+// Mobile Listeners
+if (mobileUserMenuName) mobileUserMenuName.addEventListener("click", () => { hideAll(); showEditUser(); })
+if (mobileUserMenuIcon) mobileUserMenuIcon.addEventListener("click", () => { hideAll(); showEditUser(); })
+if (mobileLogoutBtn) mobileLogoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("TDA_USER_LOGUED")
+    window.open('/FrontEnd-ToDoApp/index.html', '_self')
+})
+
 logoutBtn.addEventListener("click", e => {
     localStorage.removeItem("TDA_USER_LOGUED")
     window.open('/FrontEnd-ToDoApp/index.html', '_self')
 })
 
 // FUNCTIONS
-function hideAll () {
+function hideAll() {
     projectsContainer.style.display = "none"
     workAreaContainer.style.display = "none"
     newProjectContainer.style.display = "none"
@@ -74,7 +87,7 @@ function hideAll () {
     workAreaBtn.style.fontWeight = "normal"
     newProjectBtn.style.fontWeight = "normal"
 }
-function showProjects () {
+function showProjects() {
     if (projectsSubContainer.children.length === 0) { //Check for projects
         noProjectsTextProjects.style.display = "flex"
         projectsSubContainer.style.display = "none"
@@ -88,7 +101,7 @@ function showProjects () {
     toDoListContainer.innerHTML = ""
     projectDocumentation.value = ""
 }
-function showWorkArea () {
+function showWorkArea() {
     if (projectsSubContainer.children.length === 0) { //Check for projects
         noProjectsTextWA.style.display = "flex"
         workAreaSubContainer.style.display = "none"
@@ -99,7 +112,7 @@ function showWorkArea () {
     workAreaContainer.style.display = "flex"
     workAreaBtn.style.fontWeight = "bold"
 }
-function showNewProject () {
+function showNewProject() {
     newProjectContainer.style.display = "flex"
 
     newProjectBtn.style.fontWeight = "bold"
@@ -107,7 +120,7 @@ function showNewProject () {
     toDoListContainer.innerHTML = ""
     projectDocumentation.value = ""
 }
-function showEditUser () {
+function showEditUser() {
     editUserContainer.style.display = "flex"
 }
 // EXPORTS

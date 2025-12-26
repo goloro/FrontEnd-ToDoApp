@@ -7,6 +7,7 @@
     font-weight: 500;
     font-family: "M PLUS 2", sans-serif;
 }
+
 #notesContainer {
     width: 90%;
     height: 65vh;
@@ -15,60 +16,70 @@
     flex-direction: column;
     align-items: center;
 }
-    #noNotesText {
-        display: flex; /* Default: flex | Optional: none*/
-        text-align: center;
-        color: white;
-        font-size: large;
-        font-family: 'Montserrat', sans-serif;
-        margin: auto;
-    }
-    #notesSubContainer {
-        display: none; /* Default: flex | Optional: none*/
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-    }
-        .note {
-            background-color: white;
-            width: 80%;
-            padding: 2vh;
-            margin: 3vh auto 3vh auto;
-            border-radius: 15px;
-            cursor: pointer;
-            display: flex;
-        }
-            .noteText {
-                margin: auto;
-                font-family: 'Montserrat', sans-serif;
-                width: 90%;
-                max-width: 90%;
-                min-width: 90%;
-                font-size: small;
-                border: none;
-                outline: none;
-                min-height: 3vh;
-            }
+
+#noNotesText {
+    display: flex;
+    /* Default: flex | Optional: none*/
+    text-align: center;
+    color: white;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+}
+
+#notesSubContainer {
+    display: none;
+    /* Default: flex | Optional: none*/
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.note {
+    background-color: white;
+    width: 80%;
+    padding: 2vh;
+    margin: 3vh auto 3vh auto;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+}
+
+.noteText {
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    font-size: small;
+    border: none;
+    outline: none;
+    min-height: 3vh;
+}
+
 .createNote {
     height: 6vh;
     width: 90%;
     margin: auto;
 }
-    .createNoteButton {
-        margin: auto;
-        display: flex;
-        background-color: #67D980;
-        width: 50%;
-        height: 5vh;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-        .createNoteButton img {
-            height: 2vh;
-            margin: auto 2.5% auto auto;
-        }
-        .createNoteButton p {
-            color: white;
-            font-family: "Barlow", sans-serif;
-            margin: auto auto auto 2.5%;
-        }
+
+.createNoteButton {
+    margin: auto;
+    display: flex;
+    background-color: #67D980;
+    width: 50%;
+    height: 5vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.createNoteButton img {
+    height: 2vh;
+    margin: auto 2.5% auto auto;
+}
+
+.createNoteButton p {
+    color: white;
+    font-family: "Barlow", sans-serif;
+    margin: auto auto auto 2.5%;
+}

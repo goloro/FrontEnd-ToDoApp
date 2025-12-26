@@ -1,0 +1,32 @@
+/* Responsive Design for Notes */
+
+@media screen and (max-width: 768px) {
+    .mainNotes {
+        /* If we decide to show notes on mobile, they need to take full width */
+        width: 90%;
+        height: auto;
+        min-height: 50vh;
+        margin: 2vh auto 0 auto;
+        /* Keep top margin if needed, but centering horizontally */
+    }
+
+    #notesContainer {
+        height: auto;
+        min-height: 25vh;
+    }
+
+    #notesSubContainer {
+        height: auto;
+        max-height: 15vh;
+    }
+
+    #noNotesText {
+        height: 100%;
+        min-height: 22vh;
+        /* Match container min-height (25vh) closely */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

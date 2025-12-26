@@ -1,0 +1,43 @@
+/* Responsive Design for UI Elements (Modals, Alerts, Loaders) */
+
+@media screen and (max-width: 768px) {
+
+    /* New Project Modal */
+    #newProjectsContainer {
+        width: 90%;
+        height: auto;
+        min-height: 60vh;
+        overflow-y: scroll;
+        left: 5%;
+    }
+
+    /* Edit User Modal */
+    #editUserContainer {
+        width: 90%;
+        height: auto;
+        min-height: 60vh;
+        left: 5%;
+        padding-bottom: 5vh;
+    }
+
+    .editUserEditField {
+        width: 90%;
+    }
+
+    /* Mobile Notice (Should be hidden/removed now that we are responsive, but effectively styling it just in case) */
+    #mobileNoticeContainer {
+        display: none !important;
+        /* CRITICAL: Hide the "Mobile version under development" blocker */
+    }
+
+    /* Alert Box */
+    #alertBox {
+        width: 90%;
+        left: 5%;
+        top: 2vh;
+    }
+
+    #alertBox div p {
+        font-size: small;
+    }
+}

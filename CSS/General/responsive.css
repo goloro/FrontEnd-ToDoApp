@@ -1,6 +1,2 @@
-/* Media query Mobile Devices */
-@media screen and (max-width: 768px) {
-    #mobileNoticeContainer {
-        display: flex; 
-    }
-}
+/* Old responsive.css - logic migrated to CSS/Responsive folder */
+/* The mobile blocker has been removed to allow responsive usage */

@@ -1,0 +1,53 @@
+/* Responsive Design for Projects Grid */
+
+@media screen and (max-width: 1024px) {
+    #projectsSubContainer {
+        grid-template-columns: auto auto !important;
+        /* Tablet: 2 columns */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #projectsSubContainer {
+        display: flex !important;
+        flex-direction: column;
+        grid-template-columns: none !important;
+        overflow-y: scroll;
+        padding-bottom: 5vh;
+    }
+
+    .project {
+        width: 90%;
+        height: 15vh;
+        margin: 2vh auto;
+    }
+
+    .projectTitle {
+        font-size: medium;
+    }
+
+    #noProjectsTextProjects {
+        height: 100%;
+        /* Fallback */
+        min-height: 80vh;
+        /* Explicit height matching nearly the full container (85vh) */
+        width: 100%;
+        display: flex;
+
+        #noProjectsTextProjects {
+            height: 100%;
+            /* Fallback */
+            min-height: 80vh;
+            /* Explicit height matching nearly the full container (85vh) */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Ensure internal text centering */
+            /* Removed flex-direction: column to keep text on one line or wrap naturally */
+            padding: 0 20px;
+            /* Add padding to prevent edge touching */
+        }
+    }
+}

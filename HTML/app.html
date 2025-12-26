@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="../CSS/App/notes.css">
 
     <link rel="stylesheet" href="../CSS/General/responsive.css">
+    <link rel="stylesheet" href="../CSS/Responsive/appResponsive.css">
+    <link rel="stylesheet" href="../CSS/Responsive/projectsResponsive.css">
+    <link rel="stylesheet" href="../CSS/Responsive/workAreaResponsive.css">
+    <link rel="stylesheet" href="../CSS/Responsive/notesResponsive.css">
+    <link rel="stylesheet" href="../CSS/Responsive/uiResponsive.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -36,12 +41,29 @@
     <div class="navBar">
         <img id="logoNavBar" src="../Images/ToDoAppCompleto.png" alt="ToDoApp Logo">
 
-        <div class="menuNavBar">
+        <div id="hamburgerMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
+                <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+        </div>
+
+        <div class="menuNavBar" id="menuNavBar">
             <p id="projectsNavBar">Projects</p>
             <p id="workAreaNavBar">Work Area</p>
             <p id="newProjectNavBar">New Project</p>
+
+            <!-- Mobile Only User Menu -->
+            <div class="userMenuNavBar" id="userMenuNavBar-Mobile">
+                <img id="userMenuNavBarLogoutIcon-Mobile"
+                    src="https://api.iconify.design/uil/sign-out-alt.svg?color=white" alt="Logout Icon">
+                <p id="userMenuNavBarName-Mobile">User</p>
+                <img id="userMenuNavBarUserIcon-Mobile" src="https://api.iconify.design/bxs/user-circle.svg?color=white"
+                    alt="User Icon">
+            </div>
         </div>
 
+        <!-- Desktop User Menu -->
         <div class="userMenuNavBar">
             <img id="userMenuNavBarLogoutIcon" src="https://api.iconify.design/uil/sign-out-alt.svg?color=white"
                 alt="Logout Icon">
@@ -287,6 +309,7 @@
     <script src="../JS/funcionalities/editUser.js" type="module"></script>
     <script src="../JS/funcionalities/notes.js" type="module"></script>
     <script src="../JS/funcionalities/projects.js" type="module"></script>
+    <script src="../JS/utils/responsiveMenu.js"></script>
 </body>
 
 </html>

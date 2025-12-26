@@ -1,0 +1,64 @@
+/* Responsive Design for Index (Login/Sign Up) */
+
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        background: repeating-linear-gradient(180deg, #002233 0, #002233 25%, #2158E6 0, #2158E6 100%);
+    }
+
+    .main {
+        width: 100%;
+        height: 30vh;
+        order: 1;
+        background-color: #002233;
+        /* Dark background specific for the logo area */
+        /* Move logo to top */
+    }
+
+    #logoTDA {
+        width: 80%;
+        height: auto;
+    }
+
+    .login-sign {
+        width: 100%;
+        height: auto;
+        min-height: 70vh;
+        order: 2;
+    }
+
+    .form-container {
+        width: 90%;
+        height: auto;
+        min-height: 40vh;
+        padding-bottom: 5vh;
+        margin-top: 10vh;
+    }
+
+    .form-subDiv {
+        width: 90%;
+    }
+
+    .button-form {
+        width: 60%;
+    }
+
+    .form-users-p {
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Modals/Alerts adjustments for mobile */
+    #alertBox {
+        width: 90%;
+        left: 5%;
+    }
+
+    #advertisementContainer #advertisement {
+        width: 90%;
+        height: auto;
+        max-height: 80vh;
+        overflow-y: scroll;
+    }
+}
