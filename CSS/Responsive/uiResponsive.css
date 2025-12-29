@@ -11,17 +11,92 @@
         left: 5%;
     }
 
-    /* Edit User Modal */
+    /* Edit User Modal - Floating Card Style */
     #editUserContainer {
         width: 90%;
+        margin: 5% auto;
         height: auto;
-        min-height: 60vh;
-        left: 5%;
+        min-height: 50vh;
+        left: auto;
+        /* Remove fixed positioning */
         padding-bottom: 5vh;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Vertical center if content is short */
+    }
+
+    #editUserContainerTitle {
+        margin: 2vh auto;
+        font-size: 1.5rem;
+    }
+
+    #editUserIcon {
+        width: 20%;
+        /* Larger icon */
+        margin: 2vh auto;
     }
 
     .editUserEditField {
         width: 90%;
+        flex-direction: column;
+        /* Stack label and input */
+        margin: 1vh auto;
+        align-items: center;
+    }
+
+    .editUserEditField p {
+        margin: 0 0 0.5vh 0;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .editUserEditField input {
+        width: 100%;
+        margin: 0;
+        padding: 1.5vh;
+        box-sizing: border-box;
+    }
+
+    /* Buttons */
+    #editUserDeleteButton {
+        width: 40%;
+        min-width: 120px;
+        height: auto;
+        padding: 1vh 0;
+        margin: 2vh auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #editUserDeleteButton img {
+        margin: 0 1vh 0 0;
+    }
+
+    #editUserDeleteButton p {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    #editUserButton {
+        width: 80%;
+        height: auto;
+        min-height: 5vh;
+        padding: 1vh 0;
+        margin: 2vh auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #editUserButton img {
+        margin: 0 1vh 0 0;
+    }
+
+    #editUserButton p {
+        margin: 0;
+        font-size: 1rem;
     }
 
     /* Mobile Notice (Should be hidden/removed now that we are responsive, but effectively styling it just in case) */

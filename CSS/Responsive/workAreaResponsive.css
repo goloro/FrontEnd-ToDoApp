@@ -1,65 +1,233 @@
 /* Responsive Design for Work Area (Task List) */
 
 @media screen and (max-width: 768px) {
+
+    /* Main Container - Floating Card Style */
     #workAreaContainer {
+        width: 90%;
+        margin: 5% auto;
+        height: auto;
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        /* Background is handled by children or subcontent */
+    }
+
+    /* SubContainer - acts as the actual card content wrapper if needed, 
+       but standard structure seems to rely on children backgrounds */
+    #workAreaSubContainer {
         width: 100%;
+        height: auto;
+        border-radius: 15px;
+        overflow: hidden;
+        /* Clips children to rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        /* Ensure it takes flex props */
+        flex-direction: column;
     }
 
     /* Top Section */
     .workAreaTop {
         height: auto;
-        min-height: 20vh;
+        min-height: 15vh;
         padding-bottom: 2vh;
+        border-top-left-radius: 15px;
+        /* Match container */
+        border-top-right-radius: 15px;
     }
 
     .workAreaTopProjectTitle {
-        font-size: x-large;
+        font-size: 1.8rem;
         text-align: center;
-        width: 80%;
+        width: 90%;
+        margin-top: 1vh;
+        word-wrap: break-word;
     }
 
     #workAreaTopReturnButton {
         margin: 2vh;
+        width: 1.5em;
+        /* Ensure icon size */
+        height: 1.5em;
     }
 
     #workAreaTopDeleteDiv {
         width: 40%;
-        margin: 2vh auto;
+        min-width: 120px;
+        padding: 1vh 0;
+        /* Increase padding for touch */
+        margin: 1vh auto;
+        justify-content: center;
+        /* Center content inside */
+        display: flex;
+        align-items: center;
+    }
+
+    #workAreaTopDeleteDiv p {
+        margin: 0 0 0 1vh;
+        /* Add spacing between icon and text */
+        font-size: 1rem;
+    }
+
+    #workAreaTopDeleteDiv svg {
+        margin: 0;
     }
 
     /* Percentage Bar */
-    .workAreaPercentajeSubDiv {
-        width: 90%;
+    .workAreaPercentaje {
+        height: auto;
+        padding: 1.5vh 0;
     }
 
-    /* To Do List */
+    .workAreaPercentajeSubDiv {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        /* Stack text and bar */
+        gap: 0.5vh;
+        align-items: center;
+        /* Center them */
+    }
+
+    .workAreaPercentajeSubDiv p {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
+    .percentajeTotal {
+        width: 100%;
+        height: 1.5vh;
+        margin: 0.5vh 0;
+        background-color: #a3a2a2;
+        /* Ensure visible background */
+        border-radius: 10px;
+        /* Rounder edges */
+    }
+
+    #percentajeVariable {
+        height: 100%;
+        /* Fill the container */
+        border-radius: 10px;
+        /* Match container */
+    }
+
+    /* To Do List Section */
+    .workAreaToDoList {
+        height: auto;
+        flex: 1;
+        min-height: 30vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .toDoListTop {
+        height: auto;
+        padding: 1.5vh 5%;
+        /* Add side padding */
+        display: flex;
+        flex-direction: row;
+        /* Keep them in a row */
+        align-items: center;
+        justify-content: space-between;
+        /* Space out title and button */
+    }
+
+    .projectTitles {
+        margin: 0;
+        text-align: left;
+        width: auto;
+        font-size: 1.2rem;
+    }
+
+    .addTaskDiv {
+        width: auto;
+        min-width: unset;
+        /* Remove minimum width */
+        padding: 0.5vh 1.5vh;
+        margin: 0;
+        height: auto;
+        display: flex;
+        align-items: center;
+        background-color: #67D980;
+        /* Ensure bg color is visible */
+        border-radius: 5px;
+    }
+
+    .addTaskDiv p {
+        margin: 0 0 0 1vh;
+        /* Slightly more space from icon */
+        font-size: 0.9rem;
+        color: white;
+        /* Ensure text is white */
+        line-height: 1;
+        /* Fix vertical alignment */
+        font-family: "Barlow", sans-serif;
+        /* Ensure font consistency */
+    }
+
+    .addTaskDiv img {
+        height: 1.5vh;
+    }
+
+    /* Scrollable Task List */
     .toDoListContainer {
         display: flex !important;
         flex-direction: column;
         grid-template-columns: none !important;
         height: auto;
-        min-height: 40vh;
+        max-height: 40vh;
+        /* Limit height to force scroll */
+        min-height: 20vh;
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+        width: 90%;
+        margin: 1vh auto;
+        padding-right: 1vh;
+        /* Space for scrollbar */
+    }
+
+    /* Custom Scrollbar for Mobile */
+    .toDoListContainer::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .toDoListContainer::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
     }
 
     .toDoTask {
-        width: 95%;
-        margin: 1vh auto;
-        border-bottom: 1px solid #eee;
+        width: 100%;
+        margin: 0.5vh 0;
+        border-bottom: 1px solid #f0f0f0;
         padding-bottom: 0.5vh;
     }
 
-    .addTaskDiv {
-        width: 30%;
-        margin-right: 2vh;
+    .task {
+        width: 80%;
+        font-size: 1rem;
     }
 
-    /* Documentation */
+    /* Documentation Section */
     .workAreaDescription {
         height: auto;
-        padding-bottom: 5vh;
+        background-color: white;
+        padding-bottom: 2vh;
+        border-bottom-left-radius: 15px;
+        /* Match container */
+        border-bottom-right-radius: 15px;
     }
 
     .documentation {
-        height: 20vh;
+        height: 15vh;
+        width: 90%;
+        padding: 1vh;
+        border: 1px solid #eee;
+        border-radius: 5px;
     }
 }

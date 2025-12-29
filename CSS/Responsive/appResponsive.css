@@ -125,6 +125,10 @@
         /* Allow content to dictate height */
         min-height: 60vh;
         margin: 0 auto 2vh auto;
+        flex: 1;
+        /* Allow it to take up available vertical space */
+        display: flex;
+        /* Ensure it remains a flex container */
     }
 
     .mainNotes {
@@ -161,5 +165,89 @@
             opacity: 1;
             transform: translateY(0);
         }
+    }
+
+    /* Create New Project Container Responsive */
+    #newProjectsContainer {
+        width: 90%;
+        margin: 5% auto;
+        /* Consistent gap top/bottom matching side gaps */
+        height: auto;
+        min-height: 50vh;
+        /* Enough space but not full screen */
+        justify-content: center;
+        padding: 2vh 0;
+        border-radius: 15px;
+        /* Visual polish */
+    }
+
+    #newProjectsContainerTitle {
+        margin: 2vh auto;
+        font-size: 1.5rem;
+    }
+
+    .newProjectTitle {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        margin: 1vh auto;
+    }
+
+    .newProjectTitle p {
+        margin: 0 0 1vh 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .newProjectTitle input {
+        width: 100%;
+        margin: 0;
+        padding: 1.5vh;
+        box-sizing: border-box;
+    }
+
+    .newProjectColors {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 2vh auto;
+        gap: 2vh;
+    }
+
+    .newProjectColorsSubDiv {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    #newProjectBackgroundOptions,
+    #newProjectTextColorSelect {
+        margin: 0;
+    }
+
+    .newProjectColorsSubDiv p {
+        text-align: center;
+        margin: 0 0 1vh 0;
+    }
+
+    .newProjectColorsSubSubDiv {
+        width: 100%;
+        height: auto;
+        padding: 2vh 0;
+    }
+
+    .newProjectPreview {
+        width: 90%;
+        margin: 2vh auto;
+    }
+
+    #createNewProjectButton {
+        width: 80%;
+        padding: 1vh 0;
+        height: auto;
+        min-height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
