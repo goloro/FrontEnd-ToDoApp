@@ -73,7 +73,11 @@ body {
 
 .main {
     width: 100%;
-    height: 83vh;
+    /* height: 83vh; REMOVED to allow simple growth, but body is 100vh. 
+       Let's use min-height for safety or just keep flex growth.
+       Actually, if we want the scrollbar on the BODY, main needs to grow. */
+    min-height: 83vh;
+    height: auto;
     display: flex;
 }
 
@@ -81,7 +85,6 @@ body {
 .mainNotes {
     display: flex;
     flex-direction: column;
-    height: 83vh;
     margin: auto;
     border-radius: 15px;
     background-color: #3D5A73;
@@ -89,10 +92,15 @@ body {
 
 .mainProjects {
     width: 70%;
+    min-height: 83vh;
+    /* Allow growth */
+    height: auto;
 }
 
 .mainNotes {
     width: 20%;
+    height: 83vh;
+    /* Fixed height for notes as requested/implied */
 }
 
 .containers {
@@ -102,6 +110,17 @@ body {
     margin: auto auto 3vh auto;
     overflow-y: scroll;
     border-radius: 10px;
+}
+
+/* Specific overrides for Project Views to allow growth */
+#projectsContainer,
+#workAreaContainer,
+#newProjectsContainer,
+#editUserContainer {
+    height: auto;
+    min-height: 77vh;
+    overflow-y: visible;
+    /* Scroll happens on page/body */
 }
 
 .containers::-webkit-scrollbar {
@@ -151,7 +170,7 @@ body {
     display: flex;
     /* Default: flex | Optional: none*/
     text-align: center;
-    padding: auto;
+    /* padding: auto; Invalid CSS property */
     color: white;
     font-size: large;
     font-family: 'Montserrat', sans-serif;

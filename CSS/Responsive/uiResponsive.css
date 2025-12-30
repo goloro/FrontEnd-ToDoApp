@@ -6,7 +6,6 @@
     #newProjectsContainer {
         width: 90%;
         height: auto;
-        min-height: 60vh;
         overflow-y: scroll;
         left: 5%;
     }

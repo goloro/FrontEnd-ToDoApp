@@ -145,7 +145,8 @@
     /* Adjust container heights inside main */
     .containers {
         height: auto;
-        min-height: 85vh;
+        min-height: 70vh;
+        /* Standardized min-height for all containers */
     }
 
     /* Footer */
@@ -173,7 +174,8 @@
         margin: 5% auto;
         /* Consistent gap top/bottom matching side gaps */
         height: auto;
-        min-height: 50vh;
+        min-height: 70vh;
+        /* Match .containers */
         /* Enough space but not full screen */
         justify-content: center;
         padding: 2vh 0;
@@ -249,5 +251,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    #noProjectsTextProjects,
+    #noProjectsTextWorkArea {
+        height: 100%;
+        width: 60%;
+        display: flex;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }
