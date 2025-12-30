@@ -123,5 +123,9 @@ function showNewProject() {
 function showEditUser() {
     editUserContainer.style.display = "flex"
 }
+// INITIALIZATION
+hideAll()
+showProjects()
+
 // EXPORTS
 export { hideAll, showProjects, showWorkArea, showNewProject, showEditUser }; 

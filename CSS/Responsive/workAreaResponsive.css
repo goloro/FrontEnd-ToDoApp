@@ -125,7 +125,8 @@
         flex-direction: column;
     }
 
-    .toDoListTop {
+    .toDoListTop,
+    .documentationTop {
         height: auto;
         padding: 1.5vh 5%;
         /* Add side padding */
